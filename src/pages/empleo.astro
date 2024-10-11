@@ -1,0 +1,67 @@
+---
+import Layout from "src/layouts/Layout.astro"
+import NavBar from "@components/NavBar.astro"
+import Card from "@components/Card.astro"
+import Footer from "@components/Footer.astro"
+---
+<Layout title="Empleo">
+    <NavBar/>
+    <div class="mx-auto mt-4 p-4 grid max-w-6xl gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <Card
+            title="Computrabajo"
+            body="sitio web de búsqueda de empleo en el que puedes encontrar ofertas de trabajo en diferentes áreas."
+            link="https://mx.computrabajo.com/"
+            imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFF3M9gOk6vZRAFrqt6dxJGhTS917I6_fdog&s"
+            btntext="Clic aquí para más información" target="_blank"
+            imgWidth="800" 
+            imgHeight="600" 
+        />
+        <Card
+            title="LinkedIn"
+            body="Red social de profesionales en la que puedes encontrar ofertas de trabajo y conectar con otros profesionales."
+            link="https://www.linkedin.com/feed/"
+            imgSrc="https://store-images.s-microsoft.com/image/apps.31120.9007199266245564.44dc7699-748d-4c34-ba5e-d04eb48f7960.bc4172bd-63f0-455a-9acd-5457f44e4473"
+            btntext="Clic aquí para más información" target="_blank"
+            imgWidth="800" 
+            imgHeight="600" 
+        />
+        <Card 
+            title="Indeed" 
+            body="Sitio web de búsqueda de empleo en el que puedes encontrar ofertas de trabajo en diferentes áreas." 
+            link="https://mx.indeed.com/" 
+            imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOk6GQi0i7H3GLjZdlZqjG0skBekHNhRPGZg&s" 
+            btntext="Clic aquí para más información" target="_blank"
+            imgWidth="800" 
+            imgHeight="600" 
+        />
+        <Card
+            title="Glassdoor"
+            body="Sitio web de búsqueda de empleo en el que puedes encontrar ofertas de trabajo en diferentes áreas."
+            link="https://www.glassdoor.com.mx/Empleo/index.html"
+            imgSrc="https://www.muycomputerpro.com/wp-content/uploads/2019/09/glassdoor-espana.jpg"
+            btntext="Clic aquí para más información" target="_blank"
+            imgWidth="800"
+            imgHeight="600"
+        />
+        <Card
+            title="OCCMundial"
+            body="Sitio web de búsqueda de empleo en el que puedes encontrar ofertas de trabajo en diferentes áreas."
+            link="https://www.occ.com.mx/"
+            imgSrc="https://d11cuk1a0j5b57.cloudfront.net/blog/wp-content/uploads/2020/04/emergencia-sanitaria-2.png"
+            btntext="Clic aquí para más información" target="_blank"
+            imgWidth="800"
+            imgHeight="600"
+        />
+        <Card
+            title="Involverh"
+            body="Sitio web de búsqueda de empleo en el que puedes encontrar ofertas de trabajo en diferentes áreas."
+            link="https://talent.involverh.com/"
+            imgSrc="https://media.licdn.com/dms/image/v2/C560BAQEoprzRS9Uwlg/company-logo_200_200/company-logo_200_200/0/1656523002334/involverh_logo?e=2147483647&v=beta&t=ZqoawInodDuPmFWAVYBpn-FnU4vUt6IYVqhByvHHDYM"
+            btntext="Clic aquí para más información" target="_blank"
+            imgWidth="800"
+            imgHeight="600"
+        />
+    </div>
+    <Footer/>
+</Layout>
+

@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Card from "../components/Card.astro"
+import Header from "../components/Header.astro"
+import Footer from "@components/Footer.astro"
+---
+<Layout title="TeecBack">
+    <Header/>
+    <div class="mx-auto mt-4 p-4 grid max-w-6xl gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <Card
+            title="¿Conseguiste empleo cuando saliste de la carrera?"
+            body="Ponte en contacto con otros egresados y comparte tus experiencias de cómo conseguiste tu primer trabajo o pide consejo para encontrarlo."
+            link="#"
+            imgSrc="/Graduados.jpg"
+            btntext="Unirme"
+            imgWidth="800" 
+            imgHeight="600" 
+        />
+        <Card
+            title="¿Problemas para hacer tu CV?"
+            body="Quizá podamos echarle un vistazo a tu CV y darte unos consejos para ayudarte a conseguir tu primer empleo."
+            link="https://example.com"
+            imgSrc="/Letter TEC.jpg"
+            btntext="Mejorar mi CV"
+            imgWidth="800" 
+            imgHeight="600" 
+        />
+        <Card 
+            title="Example Title" 
+            body="Example body text." 
+            link="https://example.com" 
+            imgSrc="/Rammattra.webp" 
+            btntext="Click Here" 
+            imgWidth="800" 
+            imgHeight="600" 
+        />
+    </div>
+    <Footer/>  
+</Layout>

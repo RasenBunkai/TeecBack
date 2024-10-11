@@ -1,0 +1,40 @@
+---
+import Forms from "@components/icons/Forms.astro";
+import Jobs from "@components/icons/Jobs.astro";
+import Home from "@components/icons/Home.astro";
+import Cv from "@components/icons/Cv.astro";
+import Comunity from "@components/icons/Comunity.astro";
+import Modal from "@components/Modal.astro";
+---
+
+<nav class="bg-indigo-950 mx-0 p-4 flex justify-between items-center">
+  <!-- Logo -->
+  <a href="/" class="text-2xl font-bold text-white">TeecBack</a>
+  
+  <!-- Hamburger menu button (visible on mobile) -->
+  <button id="menu-button" class="text-white block md:hidden focus:outline-none">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+    </svg>
+  </button>
+
+  <!-- Navigation menu -->
+  <ul id="menu" class=" text-white flex-col md:flex md:flex-row md:space-x-6 absolute md:static top-16 left-0 w-full bg-indigo-950 md:w-auto transition-transform transform md:translate-x-0 -translate-x-full">
+    <li><a href="/" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"><Home/>Inicio</a></li>
+    <li><a href="/form" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"><Forms/>Encuestas</a></li>
+    <li><a href="/empleo" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"><Jobs/> Ofertas de Empleo</a></li>
+    <li><a href="/mejorarcv" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"><Cv/> Mejora tu CV</a></li>
+    <li>
+      <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" id="comunity-button" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2" type="button"><Comunity/>Comunidad de egresados</button>
+    </li>
+  </ul>
+</nav>
+<Modal/>
+<script>
+  document.getElementById('menu-button').addEventListener('click', function() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('-translate-x-full');
+    menu.classList.toggle('translate-x-0');
+  });
+
+</script>
