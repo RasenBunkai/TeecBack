@@ -19,22 +19,22 @@ import Modal from "@components/Modal.astro";
   </button>
 
   <!-- Navigation menu -->
-  <ul id="menu" class=" text-white flex-col md:flex md:flex-row md:space-x-6 absolute md:static top-16 left-0 w-full bg-indigo-950 md:w-auto transition-transform transform md:translate-x-0 -translate-x-full">
-    <li><a href="/" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"><Home/>Inicio</a></li>
-    <li><a href="/form" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"><Forms/>Encuestas</a></li>
-    <li><a href="/empleo" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"><Jobs/> Ofertas de Empleo</a></li>
-    <li><a href="/mejorarcv" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"><Cv/> Mejora tu CV</a></li>
-    <li>
+  <ul id="menu" class="text-white flex-col md:flex md:flex-row md:space-x-6 absolute md:static top-16 left-0 w-full bg-indigo-950 md:w-auto transition-transform transform md:translate-x-0 -translate-x-full md:items-center md:justify-center">
+    <li class="flex justify-center"><a href="/" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"><Home/>Inicio</a></li>
+    <li class="flex justify-center"><a href="/form" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"><Forms/>Encuestas</a></li>
+    <li class="flex justify-center"><a href="/empleo" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"><Jobs/> Ofertas de Empleo</a></li>
+    <li class="flex justify-center"><a href="/mejorarcv" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"><Cv/> Mejora tu CV</a></li>
+    <li class="flex justify-center">
       <button data-modal-target="popup-modal" data-modal-toggle="popup-modal" id="comunity-button" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2" type="button"><Comunity/>Comunidad de egresados</button>
     </li>
   </ul>
 </nav>
 <Modal/>
+
 <script>
   document.getElementById('menu-button').addEventListener('click', function() {
     const menu = document.getElementById('menu');
     menu.classList.toggle('-translate-x-full');
     menu.classList.toggle('translate-x-0');
   });
-
 </script>
