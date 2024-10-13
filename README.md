@@ -1,54 +1,47 @@
-# Astro Starter Kit: Basics
+# TeecBack
 
-```sh
-npm create astro@latest -- --template basics
+**TeecBack** es una plataforma web para recopilar retroalimentación de egresados de universidades, ayudando a mejorar la experiencia educativa. También sirve como una comunidad donde los egresados pueden compartir sus experiencias laborales, recibir apoyo en la búsqueda de empleo, y mejorar sus habilidades profesionales.
+
+## Características
+- Encuestas de retroalimentación para egresados.
+- Sección de recursos para mejorar el CV.
+- Red de contactos para conectar con otros egresados.
+
+## Tecnologías Utilizadas
+- **Astro** - Framework para crear páginas web rápidas y modernas.
+- **Tailwind CSS** - Para estilos y diseño responsive.
+- **Node.js & Express** - Back-end para manejar la API REST.
+
+## Instalación
+Para instalar y configurar el proyecto, sigue estos pasos:
+
+1. Clona el repositorio:
+    ```bash
+    git clone https://github.com/tu-usuario/TeecBack.git
+    ```
+2. Navega al directorio del proyecto:
+    ```bash
+    cd TeecBack
+    ```
+3. Instala las dependencias:
+    ```bash
+    npm install
+    ```
+
+## Uso
+Para iniciar el proyecto, ejecuta:
+```bash
+npm start
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Contribución
+Si deseas contribuir al proyecto, por favor sigue estos pasos:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+1. Haz un fork del repositorio.
+2. Crea una nueva rama (`git checkout -b feature/nueva-caracteristica`).
+3. Realiza tus cambios y haz commit (`git commit -am 'Añadir nueva característica'`).
+4. Sube tus cambios (`git push origin feature/nueva-caracteristica`).
+5. Abre un Pull Request.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Contacto
+Para cualquier consulta o sugerencia, por favor contacta a [emilianosalgado553@gmail.com].
