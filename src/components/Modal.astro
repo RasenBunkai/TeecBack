@@ -1,46 +1,135 @@
----
-import Image from "astro/components/Image.astro"
----
+<div
+  class="relative z-10 hidden"
+  aria-labelledby="modal-title"
+  role="dialog"
+  aria-modal="true"
+  id="community-modal"
+>
+  <div
+    class="fixed inset-0 bg-blue-200/75 transition-opacity"
+    aria-hidden="true"
+  >
+  </div>
 
-<div id="popup-modal" tabindex="-1" class="hidden fixed inset-0 z-50 flex justify-center items-center w-full h-full bg-black bg-opacity-50">
-    <div class="relative p-4 w-full max-w-md max-h-full">
-        <div class="relative bg-slate-200 rounded-lg ">
-            <!-- Contenido del modal -->
-            <button type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal">
-                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                </svg>
-                <span class="sr-only">Close modal</span>
-            </button>
-            <div class="p-4 md:p-5 text-center">
-                <Image src="/Shimadaclan.png" alt="Shimada" class="mx-auto mb-4 h-14 w-14" width="56" height="56"/>
-                <h3 class="mb-5 text-lg font-normal text-slate-900">Unete a nuestra comunidad de egresados</h3>
-                <a href="https://chat.whatsapp.com/CfkWnzzusD3E4Ug92fOsCr" class="text-white bg-green-700 hover:bg-green-900 text-sm rounded-lg px-5 py-2.5" target="_blank">Canal de WhatsApp</a>
-                <a href="https://discord.gg/X5Xnb5M7Sg" class=" text-white bg-blue-600 hover:bg-blue-900 text-sm rounded-lg px-5 py-2.5" target="_blank">Canal de Discord</a>
+  <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+    <div
+      class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+    >
+      <div
+        class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+      >
+        <!-- Botón de cierre -->
+        <button
+          class="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+          id="close-modal-button"
+          aria-label="Cerrar modal"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+          <div class="sm:flex sm:items-start">
+            <div
+              class="mx-auto flex size-12 shrink-0 items-center justify-center rounded-full bg-blue-100 sm:mx-0 sm:size-10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6 text-blue-600"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+                ></path>
+              </svg>
             </div>
+            <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+              <h3
+                class="text-base font-semibold text-gray-900"
+                id="modal-title"
+              >
+                Únete a nuestra comunidad de egresados
+              </h3>
+              <div class="mt-2">
+                <p class="text-sm text-gray-500">
+                  Únete a nuestra comunidad y comparte tus experiencias de cómo
+                  conseguiste tu primer trabajo o pide consejo para encontrarlo.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+        <div
+          class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6 items-center justify-center"
+        >
+          <a
+            class="inline-flex w-full justify-center rounded-md bg-green-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-600 sm:ml-3 sm:w-auto"
+            href="https://chat.whatsapp.com/CfkWnzzusD3E4Ug92fOsCr"
+            target="_blank"
+          >
+            Canal de WhatsApp
+          </a>
+          <a
+            class="mt-3 inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-indigo-800 sm:mt-0 sm:w-auto"
+            href="https://discord.gg/asTrBRpC3m"
+            target="_blank"
+          >
+            Canal de Discord
+          </a>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <script>
-    // Seleccionar el botón que abre el modal
-  const modalButton = document.getElementById('comunity-button');
-// Seleccionar el modal
-  const modal = document.getElementById('popup-modal');
-// Seleccionar los botones que cierran el modal
-  const closeButtons = document.querySelectorAll('[data-modal-hide="popup-modal"]');
-// Función para mostrar el modal
-  function showModal() {
-      modal.classList.remove('hidden');
-  }
-// Función para ocultar el modal
-  function hideModal() {
-      modal.classList.add('hidden');
-  }
-// Agregar evento para mostrar el modal cuando se hace clic en el botón
-  modalButton.addEventListener('click', showModal);
-// Agregar eventos para ocultar el modal cuando se hace clic en los botones de cerrar
-  closeButtons.forEach(button => {
-      button.addEventListener('click', hideModal);
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("community-modal");
+    const closeModalButton = document.getElementById("close-modal-button");
+    const openModalButton = document.getElementById("comunity-button");
+
+    const showModal = () => {
+      modal.classList.remove("hidden");
+    };
+
+    const hideModal = () => {
+      modal.classList.add("hidden");
+    };
+
+    // Abrir modal al hacer clic en el botón
+    openModalButton.addEventListener("click", showModal);
+
+    // Cerrar modal al hacer clic en el botón de cierre
+    closeModalButton.addEventListener("click", hideModal);
+
+    // Cerrar modal al hacer clic fuera del contenido
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        hideModal();
+      }
+    });
+
+    // Cerrar modal al presionar la tecla Escape
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+        hideModal();
+      }
+    });
   });
 </script>

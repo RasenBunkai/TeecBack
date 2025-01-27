@@ -2,18 +2,15 @@
 import Layout from "src/layouts/Layout.astro"
 import NavBar from "@components/NavBar.astro"
 import Card from "@components/Card.astro"
-import Footer from "@components/Footer.astro"
 import Alert from "@components/Alert.astro"
 ---
 <Layout title="Empleo">
     <NavBar/>
-    <h1 class="text-center text-4xl font-bold my-5">Bolsa de trabajo</h1>
+    <h1 class="text-center text-4xl font-semibold my-5">Bolsa de trabajo</h1>
 
     <Alert
-    body="TecJobs esta en desarrollo, pero puedes encontrar ofertas de trabajo en el sitio web del "
+    body="TecJobs esta en desarrollo, pero puedes encontrar ofertas de trabajo en los siguientes sitios web."
     link="https://jobs.tec.mx/"
-    link_body="Tec de Monterrey."
-    body_after=" TecJobs estará disponible próximamente."
     />
     <div class="mx-auto mt-4 p-4 grid max-w-6xl gap-4 md:grid-cols-2 lg:grid-cols-3">
         <Card
@@ -71,6 +68,5 @@ import Alert from "@components/Alert.astro"
             imgHeight="600"
         />
     </div>
-    <Footer/>
 </Layout>
 

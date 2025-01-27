@@ -1,5 +1,5 @@
 # TeecBack
-
+![TeecBackMockUp](src/img/TeecBackMockup.png)
 **TeecBack** es una plataforma web para recopilar retroalimentación de egresados de universidades, ayudando a mejorar la experiencia educativa. También sirve como una comunidad donde los egresados pueden compartir sus experiencias laborales, recibir apoyo en la búsqueda de empleo, y mejorar sus habilidades profesionales.
 
 ## Características
@@ -44,4 +44,4 @@ Si deseas contribuir al proyecto, por favor sigue estos pasos:
 5. Abre un Pull Request.
 
 ## Contacto
-Para cualquier consulta o sugerencia, por favor contacta a [emilianosalgado553@gmail.com].
+Para cualquier consulta o sugerencia, por favor contacta a emilianosalgado553@gmail.com.
