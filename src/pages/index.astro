@@ -1,19 +1,22 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Card from "../components/Card.astro"
-import Header from "../components/Header.astro"
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Header from "../components/Header.astro";
 ---
+
 <Layout title="TeecBack">
-    <Header/>
-    <div class="mx-auto mt-4 p-4 grid max-w-6xl gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <Header />
+    <div
+        class="mx-auto mt-4 p-4 grid max-w-6xl gap-4 md:grid-cols-2 lg:grid-cols-3"
+    >
         <Card
             title="¡Únete a nuestra comunidad de Discord!"
             body="Ponte en contacto con otros egresados y comparte tus experiencias de cómo conseguiste tu primer trabajo o pide consejo para encontrarlo."
-            link=""
+            link="https://discord.gg/asTrBRpC3m"
             imgSrc="/Graduados.jpg"
             btntext="Unirme"
-            imgWidth="800" 
-            imgHeight="600" 
+            imgWidth="800"
+            imgHeight="600"
         />
         <Card
             title="¿Problemas para hacer tu CV?"
@@ -21,17 +24,17 @@ import Header from "../components/Header.astro"
             link="/mejoraCV"
             imgSrc="/Letter TEC.jpg"
             btntext="Mejorar mi CV"
-            imgWidth="800" 
-            imgHeight="600" 
+            imgWidth="800"
+            imgHeight="600"
         />
-        <Card 
-            title="¿Buscas empleo?" 
-            body="Si estás buscando empleo, te recomendamos que visites nuestra bolsa de trabajo." 
-            link="/empleo" 
-            imgSrc="/Graduados Trabajo.jpg" 
-            btntext="ver empleos" 
-            imgWidth="800" 
-            imgHeight="600" 
+        <Card
+            title="¿Buscas empleo?"
+            body="Si estás buscando empleo, te recomendamos que visites nuestra bolsa de trabajo."
+            link="/empleo"
+            imgSrc="/Graduados Trabajo.jpg"
+            btntext="ver empleos"
+            imgWidth="800"
+            imgHeight="600"
         />
     </div>
 </Layout>
