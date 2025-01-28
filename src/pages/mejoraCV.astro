@@ -227,69 +227,108 @@ import NavBar from "@components/NavBar.astro";
                 <h2 class="text-2xl font-semibold text-gray-800 mb-4">
                     Recursos adicionales
                 </h2>
-                <ul class="list-disc list-inside text-gray-600">
+                <ul class="flex flex-row flex-wrap gap-4">
                     <li class="mb-2">
-                        <a href="#" class="text-blue-500 hover:underline"
+                        <a
+                            href="https://www.linkedin.com/pulse/c%C3%B3mo-hacer-una-carta-de-presentaci%C3%B3n-efectiva-luis-prado-gonz%C3%A1lez/"
+                            class="text-white bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded"
+                            target="_blank"
                             >Cómo redactar una carta de presentación</a
                         >
                     </li>
                     <li class="mb-2">
-                        <a href="#" class="text-blue-500 hover:underline"
-                            >Optimiza tu perfil de LinkedIn</a
+                        <a
+                            href="https://www.linkedin.com/pulse/pdf-perfil-de-linkedin-optimizado-destaca-tus-con-esta-pendino/"
+                            class="text-white bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded"
+                            target="_blank">Optimiza tu perfil de LinkedIn</a
+                        >
+                    </li>
+                    <li class="mb-2">
+                        <a
+                            href="https://www.linkedin.com/pulse/c%C3%B3mo-hacer-un-buen-perfil-de-linkedin-6-consejos-para-luis-barreto/"
+                            class="text-white bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded"
+                            target="_blank"
+                            >Consejos para crear un perfil en LinkedIn</a
                         >
                     </li>
                 </ul>
             </div>
         </div>
+        <!-- Incluir la biblioteca jsPDF -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"
+        ></script>
+
+        <!-- Script funcional -->
+        <script>
+            document
+                .getElementById("generateCV")
+                .addEventListener("click", () => {
+                    const name = (
+                        document.getElementById("name") as HTMLInputElement
+                    ).value;
+                    const headline = (
+                        document.getElementById("headline") as HTMLInputElement
+                    ).value;
+                    const email = (
+                        document.getElementById("email") as HTMLInputElement
+                    ).value;
+                    const location = (
+                        document.getElementById("location") as HTMLInputElement
+                    ).value;
+                    const about = (
+                        document.getElementById("about") as HTMLTextAreaElement
+                    ).value;
+                    const education = (
+                        document.getElementById(
+                            "education",
+                        ) as HTMLTextAreaElement
+                    ).value;
+                    const skills = (
+                        document.getElementById("skills") as HTMLTextAreaElement
+                    ).value;
+                    const interests = (
+                        document.getElementById(
+                            "interests",
+                        ) as HTMLTextAreaElement
+                    ).value;
+                    const languages = (
+                        document.getElementById(
+                            "languages",
+                        ) as HTMLTextAreaElement
+                    ).value;
+
+                    // Crear el documento PDF
+                    const { jsPDF } = window["jspdf"];
+                    const doc = new jsPDF();
+
+                    doc.setFontSize(16);
+                    doc.text(name, 10, 20);
+                    doc.setFontSize(12);
+                    doc.text(headline, 10, 30);
+
+                    doc.setFontSize(10);
+                    doc.text(`Correo: ${email}`, 10, 40);
+                    doc.text(`Localización: ${location}`, 10, 50);
+
+                    doc.text("Sobre mí:", 10, 60);
+                    doc.text(about, 10, 70, { maxWidth: 190 });
+
+                    doc.text("Educación:", 10, 90);
+                    doc.text(education, 10, 100, { maxWidth: 190 });
+
+                    doc.text("Habilidades:", 10, 120);
+                    doc.text(skills, 10, 130, { maxWidth: 190 });
+
+                    doc.text("Intereses:", 10, 150);
+                    doc.text(interests, 10, 160, { maxWidth: 190 });
+
+                    doc.text("Lenguajes:", 10, 180);
+                    doc.text(languages, 10, 190, { maxWidth: 190 });
+
+                    // Guardar el archivo PDF
+                    doc.save("CV.pdf");
+                });
+        </script>
     </div>
-    <!-- Incluir la biblioteca jsPDF -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"
-    ></script>
-
-    <!-- Script funcional -->
-    <script>
-        document.getElementById("generateCV").addEventListener("click", () => {
-            const name = (document.getElementById("name") as HTMLInputElement).value;
-            const headline = (document.getElementById("headline") as HTMLInputElement).value;
-            const email = (document.getElementById("email") as HTMLInputElement).value;
-            const location = (document.getElementById("location") as HTMLInputElement).value;
-            const about = (document.getElementById("about") as HTMLTextAreaElement).value;
-            const education = (document.getElementById("education") as HTMLTextAreaElement).value;
-            const skills = (document.getElementById("skills") as HTMLTextAreaElement).value;
-            const interests = (document.getElementById("interests") as HTMLTextAreaElement).value;
-            const languages = (document.getElementById("languages") as HTMLTextAreaElement).value;
-
-            // Crear el documento PDF
-            const { jsPDF } = window['jspdf'];
-            const doc = new jsPDF();
-
-            doc.setFontSize(16);
-            doc.text(name, 10, 20);
-            doc.setFontSize(12);
-            doc.text(headline, 10, 30);
-
-            doc.setFontSize(10);
-            doc.text(`Correo: ${email}`, 10, 40);
-            doc.text(`Localización: ${location}`, 10, 50);
-
-            doc.text("Sobre mí:", 10, 60);
-            doc.text(about, 10, 70, { maxWidth: 190 });
-
-            doc.text("Educación:", 10, 90);
-            doc.text(education, 10, 100, { maxWidth: 190 });
-
-            doc.text("Habilidades:", 10, 120);
-            doc.text(skills, 10, 130, { maxWidth: 190 });
-
-            doc.text("Intereses:", 10, 150);
-            doc.text(interests, 10, 160, { maxWidth: 190 });
-
-            doc.text("Lenguajes:", 10, 180);
-            doc.text(languages, 10, 190, { maxWidth: 190 });
-
-            // Guardar el archivo PDF
-            doc.save("CV.pdf");
-        });
-    </script>
 </Layout>
