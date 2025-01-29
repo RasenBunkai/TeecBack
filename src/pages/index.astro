@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Header from "../components/Header.astro";
+import Carrusel from "@components/Carrusel.astro";
 ---
 
 <Layout title="TeecBack">
@@ -28,13 +29,97 @@ import Header from "../components/Header.astro";
             imgHeight="600"
         />
         <Card
-            title="¿Buscas empleo?"
-            body="Si estás buscando empleo, te recomendamos que visites nuestra bolsa de trabajo."
-            link="/empleo"
+            title="Recursos para egresados"
+            body="Accede a herramientas y materiales que te ayudarán en tu desarrollo profesional. Encuentra plantillas de CV, guías de entrevistas y más."
+            link="/recursos"
             imgSrc="/Graduados Trabajo.jpg"
-            btntext="ver empleos"
+            btntext="Ver recursos"
             imgWidth="800"
             imgHeight="600"
         />
+    </div>
+    <div class="container mx-auto px-14 pb-12">
+        <!-- Recursos Destacados -->
+        <section class="mt-12">
+            <h2 class="text-3xl font-semibold text-gray-900 text-center">
+                Recursos Destacados
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6 mt-6">
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <h3 class="text-xl font-semibold">Plantillas de CV</h3>
+                    <p class="text-gray-600">
+                        Descarga formatos profesionales y personaliza tu
+                        currículum.
+                    </p>
+                    <a
+                        href="/recursos"
+                        class="text-blue-600 font-semibold hover:underline"
+                        >Ver más →</a
+                    >
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <h3 class="text-xl font-semibold">
+                        Consejos para Entrevistas
+                    </h3>
+                    <p class="text-gray-600">
+                        Aprende cómo responder preguntas clave y destacar en
+                        entrevistas.
+                    </p>
+                    <a
+                        href="/recursos"
+                        class="text-blue-600 font-semibold hover:underline"
+                        >Ver más →</a
+                    >
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <h3 class="text-xl font-semibold">Cursos Gratuitos</h3>
+                    <p class="text-gray-600">
+                        Mejora tus habilidades con cursos certificados en línea.
+                    </p>
+                    <a
+                        href="/recursos"
+                        class="text-blue-600 font-semibold hover:underline"
+                        >Ver más →</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="mt-12">
+            <h2 class="text-3xl font-semibold text-gray-900 text-center">
+                Lo que dicen nuestros egresados
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6 mt-6">
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <p class="text-gray-700">
+                        “Gracias a la plataforma conseguí mi primer empleo en
+                        tecnología. Muy recomendada.”
+                    </p>
+                    <p class="text-gray-900 font-semibold mt-4">
+                        — Carlos R., Ingeniero de Software
+                    </p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <p class="text-gray-700">
+                        “Los cursos gratuitos me ayudaron a mejorar mis
+                        habilidades y conseguir certificaciones.”
+                    </p>
+                    <p class="text-gray-900 font-semibold mt-4">
+                        — Andrea M., Marketing Digital
+                    </p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <p class="text-gray-700">
+                        “La comunidad de egresados me permitió conectar con
+                        grandes oportunidades.”
+                    </p>
+                    <p class="text-gray-900 font-semibold mt-4">
+                        — Luis G., Analista de Datos
+                    </p>
+                </div>
+            </div>
+        </section>
+        <Carrusel />
     </div>
 </Layout>

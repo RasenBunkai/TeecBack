@@ -1,96 +1,257 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import NavBar from "../components/NavBar.astro"
+import Layout from "../layouts/Layout.astro";
+import NavBar from "../components/NavBar.astro";
 ---
+
 <Layout title="TeecBack | Formulario">
     <NavBar />
-    <div class="container mx-auto my-2 bg-slate-100 p-6 rounded-lg shadow-lg">
-        <form action="https://formspree.io/f/mdkonval" method="POST">
-            <h2 class="text-2xl font-semibold mb-4">Sobre la carrera y materias</h2>
-            <div class="mb-4">
-                <label for="carrera-cursada" class="block text-gray-700">¿Qué carrera estudiaste?</label>
-                <select id="carrera-cursada" required name="carrera_cursada"  class="mt-1 p-2 border border-gray-300 rounded w-full">
-                    <option selected value="none">Selecciona una opción</option>
-                    <option value="ingenieria-sistemas">Ingeniería de Sistemas</option>
-                    <option value="ingenieria-industrial">Ingeniería Industrial</option>
-                    <option value="administracion-empresas">Administración de Empresas</option>
-                    <option value="contaduria-publica">Contaduría Pública</option>
-                    <option value="otra">Otra</option>
-                </select>
-            </div>
-            <div class="mb-4">
-                <label for="materias-relevantes" class="block text-gray-700">¿Qué materias consideras más relevantes para tu desarrollo profesional?</label>
-                <textarea id="materias-relevantes" name="materias_relevantes" rows="3" required class="mt-1 p-2 border border-gray-300 rounded w-full"></textarea>
-            </div>
-            <div class="mb-4">
-                <label for="mejoras-materia" class="block text-gray-700">¿Hay alguna materia que sientas que debería mejorarse o actualizarse?</label>
-                <textarea id="mejoras-materia" name="mejoras_materia" rows="3" required class="mt-1 p-2 border border-gray-300 rounded w-full"></textarea>
-            </div>
-            <div class="mb-4">
-                <label for="temas-agregar" class="block text-gray-700">¿Qué temas crees que deberían agregarse al plan de estudios?</label>
-                <textarea id="temas-agregar" name="temas_agregar" rows="3" required class="mt-1 p-2 border border-gray-300 rounded w-full"></textarea>
-            </div>
-            
-            <h2 class="text-2xl font-semibold mb-4">Sobre la experiencia académica</h2>
-            <div class="mb-4">
-                <label for="experiencia-profesores" class="block text-gray-700">¿Cómo fue tu experiencia general con los profesores?</label>
-                <textarea id="experiencia-profesores" name="experiencia_profesores" rows="3" required class="mt-1 p-2 border border-gray-300 rounded w-full"></textarea>
-            </div>
-            <div class="mb-4">
-                <label for="preparacion-mercado" class="block text-gray-700">¿Qué tan preparado/a te sentiste para el mercado laboral después de egresar?</label>
-                <textarea id="preparacion-mercado" name="preparacion_mercado" rows="3" required class="mt-1 p-2 border border-gray-300 rounded w-full"></textarea>
-            </div>
-            <div class="mb-4">
-                <label for="habilidades-utiles" class="block text-gray-700">¿Qué habilidades aprendidas en la universidad te han sido más útiles en tu carrera profesional?</label>
-                <textarea id="habilidades-utiles" name="habilidades_utiles" rows="3" required class="mt-1 p-2 border border-gray-300 rounded w-full"></textarea>
-            </div>
-            <div class="mb-4">
-                <label for="mejoras-universidad" class="block text-gray-700">¿Qué te gustaría que la universidad hubiera ofrecido para prepararte mejor para tu trabajo actual?</label>
-                <textarea id="mejoras-universidad" name="mejoras_universidad" rows="3" required class="mt-1 p-2 border border-gray-300 rounded w-full"></textarea>
-            </div>
+    <div class="min-h-screen p-6">
+        <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
+            <form action="https://formspree.io/f/mdkonval" method="POST">
+                <h2 class="text-2xl font-semibold mb-4">
+                    Sobre la carrera y materias
+                </h2>
+                <div class="mb-4">
+                    <label for="carrera-cursada" class="block text-gray-700"
+                        >¿Qué carrera estudiaste?</label
+                    >
+                    <select
+                        id="carrera-cursada"
+                        required
+                        name="carrera_cursada"
+                        class="mt-1 p-2 border border-gray-300 rounded w-full"
+                    >
+                        <option selected value="none"
+                            >Selecciona una opción</option
+                        >
+                        <option value="ingenieria-sistemas"
+                            >Ingeniería de Sistemas</option
+                        >
+                        <option value="ingenieria-industrial"
+                            >Ingeniería Industrial</option
+                        >
+                        <option value="administracion-empresas"
+                            >Administración de Empresas</option
+                        >
+                        <option value="contaduria-publica"
+                            >Contaduría Pública</option
+                        >
+                        <option value="otra">Otra</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="materias-relevantes" class="block text-gray-700"
+                        >¿Qué materias consideras más relevantes para tu
+                        desarrollo profesional?</label
+                    >
+                    <textarea
+                        id="materias-relevantes"
+                        name="materias_relevantes"
+                        rows="3"
+                        required
+                        class="mt-1 p-2 border border-gray-300 rounded w-full"
+                    ></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="mejoras-materia" class="block text-gray-700"
+                        >¿Hay alguna materia que sientas que debería mejorarse o
+                        actualizarse?</label
+                    >
+                    <textarea
+                        id="mejoras-materia"
+                        name="mejoras_materia"
+                        rows="3"
+                        required
+                        class="mt-1 p-2 border border-gray-300 rounded w-full"
+                    ></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="temas-agregar" class="block text-gray-700"
+                        >¿Qué temas crees que deberían agregarse al plan de
+                        estudios?</label
+                    >
+                    <textarea
+                        id="temas-agregar"
+                        name="temas_agregar"
+                        rows="3"
+                        required
+                        class="mt-1 p-2 border border-gray-300 rounded w-full"
+                    ></textarea>
+                </div>
 
-            <h2 class="text-2xl font-semibold mb-4">Sobre la retroalimentación general</h2>
-            <div class="mb-4">
-                <label for="actividades-adicionales" class="block text-gray-700">¿Qué actividades o servicios adicionales te habrían gustado tener como egresado?</label>
-                <textarea id="actividades-adicionales" name="actividades_adicionales" rows="3" required class="mt-1 p-2 border border-gray-300 rounded w-full"></textarea>
-            </div>
-            <div class="mb-4">
-                <label for="apoyo-graduacion" class="block text-gray-700">¿Qué tipo de apoyo te hubiera gustado recibir después de graduarte (red de contactos, oportunidades laborales, etc.)?</label>
-                <textarea id="apoyo-graduacion" name="apoyo_graduacion" rows="3" required class="mt-1 p-2 border border-gray-300 rounded w-full"></textarea>
-            </div>
-            <div class="mb-4">
-                <label for="recomendacion-futuros-estudiantes" class="block text-gray-700">¿Recomendarías a futuros estudiantes que estudien la misma carrera que tú? ¿Por qué?</label>
-                <textarea id="recomendacion-futuros-estudiantes" name="recomendacion_futuros_estudiantes" rows="3" required class="mt-1 p-2 border border-gray-300 rounded w-full"></textarea>
-            </div>
-            <div class="mb-4">
-                <label for="enfoque-practico-teorico" class="block text-gray-700">¿Qué opinas del enfoque práctico vs teórico de tu formación académica?</label>
-                <textarea id="enfoque-practico-teorico" name="enfoque_practico_teorico" rows="3" required class="mt-1 p-2 border border-gray-300 rounded w-full"></textarea>
-            </div>
+                <h2 class="text-2xl font-semibold mb-4">
+                    Sobre la experiencia académica
+                </h2>
+                <div class="mb-4">
+                    <label
+                        for="experiencia-profesores"
+                        class="block text-gray-700"
+                        >¿Cómo fue tu experiencia general con los profesores?</label
+                    >
+                    <textarea
+                        id="experiencia-profesores"
+                        name="experiencia_profesores"
+                        rows="3"
+                        required
+                        class="mt-1 p-2 border border-gray-300 rounded w-full"
+                    ></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="preparacion-mercado" class="block text-gray-700"
+                        >¿Qué tan preparado/a te sentiste para el mercado
+                        laboral después de egresar?</label
+                    >
+                    <textarea
+                        id="preparacion-mercado"
+                        name="preparacion_mercado"
+                        rows="3"
+                        required
+                        class="mt-1 p-2 border border-gray-300 rounded w-full"
+                    ></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="habilidades-utiles" class="block text-gray-700"
+                        >¿Qué habilidades aprendidas en la universidad te han
+                        sido más útiles en tu carrera profesional?</label
+                    >
+                    <textarea
+                        id="habilidades-utiles"
+                        name="habilidades_utiles"
+                        rows="3"
+                        required
+                        class="mt-1 p-2 border border-gray-300 rounded w-full"
+                    ></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="mejoras-universidad" class="block text-gray-700"
+                        >¿Qué te gustaría que la universidad hubiera ofrecido
+                        para prepararte mejor para tu trabajo actual?</label
+                    >
+                    <textarea
+                        id="mejoras-universidad"
+                        name="mejoras_universidad"
+                        rows="3"
+                        required
+                        class="mt-1 p-2 border border-gray-300 rounded w-full"
+                    ></textarea>
+                </div>
 
-            <h2 class="text-2xl font-semibold mb-4">Sobre la universidad</h2>
-            <div class="mb-4">
-                <label for="satisfaccion-recursos" class="block text-gray-700">¿Qué tan satisfecho/a estuviste con los recursos académicos (biblioteca, laboratorios, etc.)?</label>
-                <select id="satisfaccion-recursos" name="satisfaccion_recursos" required class="mt-1 p-2 border border-gray-300 rounded w-full">
-                    <option selected value="Selecciona">Selecciona una opción</option>
-                    <option value="Excelente">Excelente</option>
-                    <option value="Buena">Buena</option>
-                    <option value="Regular">Regular</option>
-                    <option value="Mala">Mala</option>
-                </select>
-            </div>
-            <div class="mb-4">
-                <label for="calidad-tecnologias" class="block text-gray-700">¿Cómo calificarías el acceso a tecnologías y herramientas modernas durante tu carrera?</label>
-                <select id="calidad-tecnologias" name="calidad_tecnologias" required class="mt-1 p-2 border border-gray-300 rounded w-full">
-                    <option selected value="Selecciona">Selecciona una opción</option>
-                    <option value="Excelente">Excelente</option>
-                    <option value="Buena">Buena</option>
-                    <option value="Regular">Regular</option>
-                    <option value="Mala">Mala</option>
-                </select>
-            </div>
-            <div class="flex items-center justify-center">
-                <button type="submit" class="mt-6 bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700">Enviar</button>
-            </div>
-        </form>
+                <h2 class="text-2xl font-semibold mb-4">
+                    Sobre la retroalimentación general
+                </h2>
+                <div class="mb-4">
+                    <label
+                        for="actividades-adicionales"
+                        class="block text-gray-700"
+                        >¿Qué actividades o servicios adicionales te habrían
+                        gustado tener como egresado?</label
+                    >
+                    <textarea
+                        id="actividades-adicionales"
+                        name="actividades_adicionales"
+                        rows="3"
+                        required
+                        class="mt-1 p-2 border border-gray-300 rounded w-full"
+                    ></textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="apoyo-graduacion" class="block text-gray-700"
+                        >¿Qué tipo de apoyo te hubiera gustado recibir después
+                        de graduarte (red de contactos, oportunidades laborales,
+                        etc.)?</label
+                    >
+                    <textarea
+                        id="apoyo-graduacion"
+                        name="apoyo_graduacion"
+                        rows="3"
+                        required
+                        class="mt-1 p-2 border border-gray-300 rounded w-full"
+                    ></textarea>
+                </div>
+                <div class="mb-4">
+                    <label
+                        for="recomendacion-futuros-estudiantes"
+                        class="block text-gray-700"
+                        >¿Recomendarías a futuros estudiantes que estudien la
+                        misma carrera que tú? ¿Por qué?</label
+                    >
+                    <textarea
+                        id="recomendacion-futuros-estudiantes"
+                        name="recomendacion_futuros_estudiantes"
+                        rows="3"
+                        required
+                        class="mt-1 p-2 border border-gray-300 rounded w-full"
+                    ></textarea>
+                </div>
+                <div class="mb-4">
+                    <label
+                        for="enfoque-practico-teorico"
+                        class="block text-gray-700"
+                        >¿Qué opinas del enfoque práctico vs teórico de tu
+                        formación académica?</label
+                    >
+                    <textarea
+                        id="enfoque-practico-teorico"
+                        name="enfoque_practico_teorico"
+                        rows="3"
+                        required
+                        class="mt-1 p-2 border border-gray-300 rounded w-full"
+                    ></textarea>
+                </div>
+
+                <h2 class="text-2xl font-semibold mb-4">
+                    Sobre la universidad
+                </h2>
+                <div class="mb-4">
+                    <label
+                        for="satisfaccion-recursos"
+                        class="block text-gray-700"
+                        >¿Qué tan satisfecho/a estuviste con los recursos
+                        académicos (biblioteca, laboratorios, etc.)?</label
+                    >
+                    <select
+                        id="satisfaccion-recursos"
+                        name="satisfaccion_recursos"
+                        required
+                        class="mt-1 p-2 border border-gray-300 rounded w-full"
+                    >
+                        <option selected value="Selecciona"
+                            >Selecciona una opción</option
+                        >
+                        <option value="Excelente">Excelente</option>
+                        <option value="Buena">Buena</option>
+                        <option value="Regular">Regular</option>
+                        <option value="Mala">Mala</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="calidad-tecnologias" class="block text-gray-700"
+                        >¿Cómo calificarías el acceso a tecnologías y
+                        herramientas modernas durante tu carrera?</label
+                    >
+                    <select
+                        id="calidad-tecnologias"
+                        name="calidad_tecnologias"
+                        required
+                        class="mt-1 p-2 border border-gray-300 rounded w-full"
+                    >
+                        <option selected value="Selecciona"
+                            >Selecciona una opción</option
+                        >
+                        <option value="Excelente">Excelente</option>
+                        <option value="Buena">Buena</option>
+                        <option value="Regular">Regular</option>
+                        <option value="Mala">Mala</option>
+                    </select>
+                </div>
+                <div class="flex items-center justify-center">
+                    <button
+                        type="submit"
+                        class="mt-6 bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700"
+                        >Enviar</button
+                    >
+                </div>
+            </form>
+        </div>
     </div>
 </Layout>

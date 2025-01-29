@@ -1,0 +1,141 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import NavBar from "@components/NavBar.astro";
+---
+
+<Layout title="TeecBack | Recursos">
+    <NavBar />
+    <div class="min-h-screen p-6">
+        <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
+            <h1 class="text-4xl font-bold text-center text-gray-900">
+                Recursos para Egresados
+            </h1>
+            <p class="text-center text-gray-600 mt-4 max-w-2xl mx-auto">
+                Encuentra herramientas y guías que te ayudarán a mejorar tu
+                empleabilidad y desarrollo profesional.
+            </p>
+
+            <!-- Grid principal -->
+            <div class="grid md:grid-cols-3 gap-6 mt-8">
+                <!-- Plantillas de CV -->
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h2 class="text-xl font-semibold text-gray-800">
+                        Plantillas de CV
+                    </h2>
+                    <p class="text-gray-600 mt-2">
+                        Descarga formatos de CV profesionales listos para editar
+                        y mejorar tu presentación laboral.
+                    </p>
+                    <a
+                        href="/plantillas-cv"
+                        class="block mt-4 text-blue-600 font-semibold hover:underline"
+                    >
+                        Ver plantillas →
+                    </a>
+                </div>
+
+                <!-- Guía de entrevistas -->
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h2 class="text-xl font-semibold text-gray-800">
+                        Guía de entrevistas
+                    </h2>
+                    <p class="text-gray-600 mt-2">
+                        Aprende cómo responder preguntas clave y destacar en
+                        entrevistas de trabajo.
+                    </p>
+                    <a
+                        href="/guia-entrevistas"
+                        class="block mt-4 text-blue-600 font-semibold hover:underline"
+                    >
+                        Leer guía →
+                    </a>
+                </div>
+
+                <!-- Cursos y certificaciones -->
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h2 class="text-xl font-semibold text-gray-800">
+                        Cursos y certificaciones
+                    </h2>
+                    <p class="text-gray-600 mt-2">
+                        Encuentra cursos gratuitos y certificaciones en línea
+                        para mejorar tu perfil.
+                    </p>
+                    <a
+                        href="/cursos-certificaciones"
+                        class="block mt-4 text-blue-600 font-semibold hover:underline"
+                    >
+                        Explorar cursos →
+                    </a>
+                </div>
+
+                <!-- Red de egresados -->
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h2 class="text-xl font-semibold text-gray-800">
+                        Red de Egresados
+                    </h2>
+                    <p class="text-gray-600 mt-2">
+                        Conéctate con otros egresados para intercambiar
+                        experiencias y oportunidades laborales.
+                    </p>
+                    <a
+                        href="/red-egresados"
+                        class="block mt-4 text-blue-600 font-semibold hover:underline"
+                    >
+                        Únete a la red →
+                    </a>
+                </div>
+
+                <!-- Eventos y webinars -->
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h2 class="text-xl font-semibold text-gray-800">
+                        Eventos y Webinars
+                    </h2>
+                    <p class="text-gray-600 mt-2">
+                        Mantente informado sobre conferencias, talleres y
+                        charlas en línea sobre empleabilidad.
+                    </p>
+                    <a
+                        href="/eventos-webinars"
+                        class="block mt-4 text-blue-600 font-semibold hover:underline"
+                    >
+                        Ver eventos →
+                    </a>
+                </div>
+
+                <!-- Consejos para LinkedIn -->
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h2 class="text-xl font-semibold text-gray-800">
+                        Consejos para LinkedIn
+                    </h2>
+                    <p class="text-gray-600 mt-2">
+                        Aprende a optimizar tu perfil de LinkedIn para atraer
+                        mejores oportunidades de empleo.
+                    </p>
+                    <a
+                        href="/linkedin-tips"
+                        class="block mt-4 text-blue-600 font-semibold hover:underline"
+                    >
+                        Ver consejos →
+                    </a>
+                </div>
+
+                <!-- Freelance y Trabajo Remoto -->
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h2 class="text-xl font-semibold text-gray-800">
+                        Freelance y Trabajo Remoto
+                    </h2>
+                    <p class="text-gray-600 mt-2">
+                        Encuentra plataformas y consejos para trabajar como
+                        freelancer o en remoto.
+                    </p>
+                    <a
+                        href="/freelance-remoto"
+                        class="block mt-4 text-blue-600 font-semibold hover:underline"
+                    >
+                        Ver recursos →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
