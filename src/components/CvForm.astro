@@ -1,0 +1,308 @@
+---
+// filepath: /d:/sanji/Documentos/TeecBack/src/components/CvForm.astro
+// import {jsPDF} from "../node_modules/jspdf/dist/jspdf.es.min.js";
+
+const formFields = {
+  name: "",
+  email: "",
+  phone: "",
+  address: "",
+  education: [],
+  experience: [],
+  skills: [],
+  awards: "",
+  publications: "",
+};
+---
+
+<div class="max-w-4xl mx-auto p-6">
+  <h3 class="text-2xl font-semibold text-gray-800 mb-4">Crea tu propio cv</h3>
+
+  <form class="space-y-6" id="harvardForm">
+    <div class="harvard-section">
+      <h2 class="harvard-subtitle">Información Personal</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Nombre completo</label
+          >
+          <input type="text" id="name" class="harvard-input" required />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Correo electrónico</label
+          >
+          <input type="email" id="email" class="harvard-input" required />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Teléfono</label
+          >
+          <input type="tel" id="phone" class="harvard-input" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Dirección</label
+          >
+          <input type="text" id="address" class="harvard-input" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Educación (Múltiples entradas) -->
+    <div class="harvard-section">
+      <h2 class="harvard-subtitle">Educación</h2>
+      <div id="educationEntries" class="space-y-4">
+        <div class="education-entry">
+          <input
+            type="text"
+            placeholder="Institución"
+            class="harvard-input mb-2"
+          />
+          <input
+            type="text"
+            placeholder="Título obtenido"
+            class="harvard-input mb-2"
+          />
+          <input
+            type="text"
+            placeholder="Fechas (YYYY-YYYY)"
+            class="harvard-input"
+          />
+        </div>
+      </div>
+      <button
+        type="button"
+        onclick="addEducationField()"
+        class="text-blue-600 text-sm mt-2">
+        + Agregar otra institución
+      </button>
+    </div>
+
+    <!-- Experiencia Profesional -->
+    <div class="harvard-section">
+      <h2 class="harvard-subtitle">Experiencia Profesional</h2>
+      <div id="experienceEntries" class="space-y-4">
+        <div class="experience-entry">
+          <input
+            type="text"
+            placeholder="Posición"
+            class="harvard-input mb-2"
+          />
+          <input type="text" placeholder="Empresa" class="harvard-input mb-2" />
+          <input
+            type="text"
+            placeholder="Fechas (MM/YYYY - MM/YYYY)"
+            class="harvard-input mb-2"
+          />
+          <textarea
+            placeholder="Descripción (1-2 puntos)"
+            class="harvard-input h-20"></textarea>
+        </div>
+      </div>
+      <button
+        type="button"
+        onclick="addExperienceField()"
+        class="text-blue-600 text-sm mt-2">
+        + Agregar otra experiencia
+      </button>
+    </div>
+
+    <!-- Habilidades Técnicas -->
+    <div class="harvard-section">
+      <h2 class="harvard-subtitle">Habilidades Técnicas</h2>
+      <div id="skillEntries" class="grid grid-cols-3 gap-4">
+        <input type="text" placeholder="Habilidad" class="harvard-input" />
+      </div>
+      <button
+        type="button"
+        onclick="addSkillField()"
+        class="text-blue-600 text-sm mt-2">
+        + Agregar habilidad
+      </button>
+    </div>
+
+    <!-- Publicaciones y Premios -->
+    <div class="harvard-section">
+      <h2 class="harvard-subtitle">Publicaciones y Premios</h2>
+      <textarea
+        id="publications"
+        class="harvard-input h-32"
+        placeholder="Lista de publicaciones (formato APA)"></textarea>
+      <textarea
+        id="awards"
+        class="harvard-input h-32 mt-4"
+        placeholder="Premios y reconocimientos"></textarea>
+    </div>
+
+    <button
+      type="button"
+      onclick="generateHarvardCV()"
+      class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">
+      Generar CV en formato Harvard
+    </button>
+  </form>
+</div>
+
+<script type="module">
+  import {jsPDF} from "../node_modules/jspdf/dist/jspdf.es.min.js";
+
+  // Funcionalidad para campos dinámicos
+  function addEducationField() {
+    const newEntry = document.createElement("div");
+    newEntry.className = "education-entry mt-4";
+    newEntry.innerHTML = `
+      <input type="text" placeholder="Institución" class="harvard-input mb-2" />
+      <input type="text" placeholder="Título obtenido" class="harvard-input mb-2" />
+      <input type="text" placeholder="Fechas (YYYY-YYYY)" class="harvard-input" />
+    `;
+    document.getElementById("educationEntries").appendChild(newEntry);
+  }
+
+  function addExperienceField() {
+    const newEntry = document.createElement("div");
+    newEntry.className = "experience-entry mt-4";
+    newEntry.innerHTML = `
+      <input type="text" placeholder="Posición" class="harvard-input mb-2" />
+      <input type="text" placeholder="Empresa" class="harvard-input mb-2" />
+      <input type="text" placeholder="Fechas (MM/YYYY - MM/YYYY)" class="harvard-input mb-2" />
+      <textarea placeholder="Descripción (1-2 puntos)" class="harvard-input h-20"></textarea>
+    `;
+    document.getElementById("experienceEntries").appendChild(newEntry);
+  }
+
+  function addSkillField() {
+    const newEntry = document.createElement("input");
+    newEntry.type = "text";
+    newEntry.placeholder = "Habilidad";
+    newEntry.className = "harvard-input";
+    document.getElementById("skillEntries").appendChild(newEntry);
+  }
+
+  // Generación del PDF en formato Harvard
+  function generateHarvardCV() {
+    const doc = new jsPDF();
+
+    // Configuración inicial
+    doc.setFont("helvetica");
+    doc.setFontSize(12);
+    let yPos = 20;
+
+    // Header
+    doc.setFontSize(16);
+    doc.setTextColor(0, 86, 145); // Azul Harvard
+    doc.text(document.getElementById("name").value, 15, yPos);
+    yPos += 10;
+
+    // Información de contacto
+    doc.setFontSize(10);
+    doc.setTextColor(0);
+    const contactInfo = [
+      document.getElementById("email").value,
+      document.getElementById("phone").value,
+      document.getElementById("address").value,
+    ]
+      .filter(Boolean)
+      .join(" | ");
+    doc.text(contactInfo, 15, yPos);
+    yPos += 15;
+
+    // Educación
+    doc.setFontSize(12);
+    doc.setTextColor(0, 86, 145);
+    doc.text("EDUCACIÓN", 15, yPos);
+    yPos += 7;
+    doc.setDrawColor(0, 86, 145);
+    doc.line(15, yPos, 60, yPos);
+    yPos += 10;
+
+    document.querySelectorAll(".education-entry").forEach((entry) => {
+      const institution = entry.children[0].value;
+      const degree = entry.children[1].value;
+      const dates = entry.children[2].value;
+
+      doc.setFontSize(10);
+      doc.setFont("helvetica", "bold");
+      doc.text(institution, 15, yPos);
+      doc.setFont("helvetica", "normal");
+      doc.text(degree, 15, yPos + 5);
+      doc.text(dates, 150, yPos, {align: "right"});
+      yPos += 15;
+    });
+
+    // Experiencia Profesional
+    yPos += 5;
+    doc.setFontSize(12);
+    doc.setTextColor(0, 86, 145);
+    doc.text("EXPERIENCIA PROFESIONAL", 15, yPos);
+    yPos += 7;
+    doc.line(15, yPos, 60, yPos);
+    yPos += 10;
+
+    document.querySelectorAll(".experience-entry").forEach((entry) => {
+      const position = entry.children[0].value;
+      const company = entry.children[1].value;
+      const dates = entry.children[2].value;
+      const description = entry.children[3].value;
+
+      doc.setFont("helvetica", "bold");
+      doc.text(position, 15, yPos);
+      doc.setFont("helvetica", "normal");
+      doc.text(company, 15, yPos + 5);
+      doc.text(dates, 150, yPos, {align: "right"});
+      yPos += 10;
+
+      const splitDesc = doc.splitTextToSize(description, 170);
+      splitDesc.forEach((line) => {
+        doc.text("• " + line, 20, yPos);
+        yPos += 7;
+      });
+      yPos += 5;
+    });
+
+    // Habilidades
+    const skills = Array.from(document.querySelectorAll("#skillEntries input"))
+      .map((input) => input.value)
+      .filter(Boolean)
+      .join(", ");
+
+    doc.setFontSize(12);
+    doc.setTextColor(0, 86, 145);
+    doc.text("HABILIDADES TÉCNICAS", 15, yPos);
+    yPos += 7;
+    doc.line(15, yPos, 60, yPos);
+    yPos += 10;
+    doc.setFontSize(10);
+    doc.text(skills, 15, yPos, {maxWidth: 180});
+    yPos += 15;
+
+    // Publicaciones y Premios
+    const publications = document.getElementById("publications").value;
+    if (publications) {
+      doc.setFontSize(12);
+      doc.setTextColor(0, 86, 145);
+      doc.text("PUBLICACIONES", 15, yPos);
+      yPos += 7;
+      doc.line(15, yPos, 60, yPos);
+      yPos += 10;
+      doc.setFontSize(10);
+      const splitPub = doc.splitTextToSize(publications, 180);
+      splitPub.forEach((line) => {
+        doc.text(line, 15, yPos);
+        yPos += 7;
+      });
+      yPos += 5;
+    }
+
+    doc.save("Harvard_CV.pdf");
+  }
+
+  // Asignar funciones a los botones
+  document.querySelector('button[onclick="generateHarvardCV()"]').onclick =
+    generateHarvardCV;
+  document.querySelector('button[onclick="addEducationField()"]').onclick =
+    addEducationField;
+  document.querySelector('button[onclick="addExperienceField()"]').onclick =
+    addExperienceField;
+  document.querySelector('button[onclick="addSkillField()"]').onclick =
+    addSkillField;
+</script>

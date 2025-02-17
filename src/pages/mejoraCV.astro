@@ -1,6 +1,7 @@
 ---
 import Layout from "src/layouts/Layout.astro";
 import NavBar from "@components/NavBar.astro";
+import CvForm from "@components/CvForm.astro";
 ---
 
 <Layout title="TeecBack | Mejora tu Cv">
@@ -74,152 +75,7 @@ import NavBar from "@components/NavBar.astro";
                     <li class="mb-2">Revisa la ortografía y gramática.</li>
                 </ul>
             </div>
-
-            <!-- Generador de CV -->
-            <div class="mb-8">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">
-                    Genera tu CV
-                </h2>
-                <p class="text-gray-600 mb-4">
-                    Completa los campos a continuación para generar tu CV en
-                    pocos pasos.
-                </p>
-                <form id="cvForm" class="space-y-4">
-                    <!-- Nombre completo -->
-                    <div>
-                        <label
-                            class="block text-sm font-medium text-gray-700"
-                            for="name">Nombre completo</label
-                        >
-                        <input
-                            type="text"
-                            id="name"
-                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
-                            placeholder="Ingresa tu nombre completo"
-                        />
-                    </div>
-
-                    <!-- Titular -->
-                    <div>
-                        <label
-                            class="block text-sm font-medium text-gray-700"
-                            for="headline">Titular</label
-                        >
-                        <input
-                            type="text"
-                            id="headline"
-                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
-                            placeholder="Ejemplo: Desarrollador Web Full Stack"
-                        />
-                    </div>
-
-                    <!-- Email -->
-                    <div>
-                        <label
-                            class="block text-sm font-medium text-gray-700"
-                            for="email">Correo electrónico</label
-                        >
-                        <input
-                            type="email"
-                            id="email"
-                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
-                            placeholder="Ingresa tu correo"
-                        />
-                    </div>
-
-                    <!-- Localización -->
-                    <div>
-                        <label
-                            class="block text-sm font-medium text-gray-700"
-                            for="location">Localización</label
-                        >
-                        <input
-                            type="text"
-                            id="location"
-                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
-                            placeholder="Ingresa tu ciudad"
-                        />
-                    </div>
-
-                    <!-- Sobre mí -->
-                    <div>
-                        <label
-                            class="block text-sm font-medium text-gray-700"
-                            for="about">Sobre mí</label
-                        >
-                        <textarea
-                            id="about"
-                            rows="4"
-                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
-                            placeholder="Describe brevemente quién eres y qué haces"
-                        ></textarea>
-                    </div>
-
-                    <!-- Educación -->
-                    <div>
-                        <label
-                            class="block text-sm font-medium text-gray-700"
-                            for="education">Educación</label
-                        >
-                        <textarea
-                            id="education"
-                            rows="3"
-                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
-                            placeholder="Ejemplo: Ingeniería en Sistemas, Universidad XYZ, 2020-2024"
-                        ></textarea>
-                    </div>
-
-                    <!-- Habilidades -->
-                    <div>
-                        <label
-                            class="block text-sm font-medium text-gray-700"
-                            for="skills">Habilidades (blandas y duras)</label
-                        >
-                        <textarea
-                            id="skills"
-                            rows="4"
-                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
-                            placeholder="Ejemplo: Trabajo en equipo, comunicación, programación en JavaScript"
-                        ></textarea>
-                    </div>
-
-                    <!-- Intereses -->
-                    <div>
-                        <label
-                            class="block text-sm font-medium text-gray-700"
-                            for="interests">Intereses</label
-                        >
-                        <textarea
-                            id="interests"
-                            rows="3"
-                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
-                            placeholder="Ejemplo: Inteligencia Artificial, Desarrollo Web, Diseño UI/UX"
-                        ></textarea>
-                    </div>
-
-                    <!-- Lenguajes -->
-                    <div>
-                        <label
-                            class="block text-sm font-medium text-gray-700"
-                            for="languages">Lenguajes</label
-                        >
-                        <textarea
-                            id="languages"
-                            rows="3"
-                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
-                            placeholder="Ejemplo: Español (nativo), Inglés (avanzado), Francés (básico)"
-                        ></textarea>
-                    </div>
-
-                    <!-- Botón para generar CV -->
-                    <button
-                        type="button"
-                        id="generateCV"
-                        class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600"
-                        >Generar CV</button
-                    >
-                </form>
-            </div>
+            <CvForm/>
 
             <!-- Recursos adicionales -->
             <div>
@@ -232,7 +88,7 @@ import NavBar from "@components/NavBar.astro";
                             href="https://www.linkedin.com/pulse/c%C3%B3mo-hacer-una-carta-de-presentaci%C3%B3n-efectiva-luis-prado-gonz%C3%A1lez/"
                             class="text-white bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded"
                             target="_blank"
-                            >Cómo redactar una carta de presentación</a
+                            >Redacta una carta de presentación</a
                         >
                     </li>
                     <li class="mb-2">
@@ -247,87 +103,11 @@ import NavBar from "@components/NavBar.astro";
                             href="https://www.linkedin.com/pulse/c%C3%B3mo-hacer-un-buen-perfil-de-linkedin-6-consejos-para-luis-barreto/"
                             class="text-white bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded"
                             target="_blank"
-                            >Consejos para crear un perfil en LinkedIn</a
+                            >Como crear un perfil en LinkedIn</a
                         >
                     </li>
                 </ul>
             </div>
         </div>
-        <!-- Incluir la biblioteca jsPDF -->
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"
-        ></script>
-
-        <!-- Script funcional -->
-        <script>
-            document
-                .getElementById("generateCV")
-                .addEventListener("click", () => {
-                    const name = (
-                        document.getElementById("name") as HTMLInputElement
-                    ).value;
-                    const headline = (
-                        document.getElementById("headline") as HTMLInputElement
-                    ).value;
-                    const email = (
-                        document.getElementById("email") as HTMLInputElement
-                    ).value;
-                    const location = (
-                        document.getElementById("location") as HTMLInputElement
-                    ).value;
-                    const about = (
-                        document.getElementById("about") as HTMLTextAreaElement
-                    ).value;
-                    const education = (
-                        document.getElementById(
-                            "education",
-                        ) as HTMLTextAreaElement
-                    ).value;
-                    const skills = (
-                        document.getElementById("skills") as HTMLTextAreaElement
-                    ).value;
-                    const interests = (
-                        document.getElementById(
-                            "interests",
-                        ) as HTMLTextAreaElement
-                    ).value;
-                    const languages = (
-                        document.getElementById(
-                            "languages",
-                        ) as HTMLTextAreaElement
-                    ).value;
-
-                    // Crear el documento PDF
-                    const { jsPDF } = window["jspdf"];
-                    const doc = new jsPDF();
-
-                    doc.setFontSize(16);
-                    doc.text(name, 10, 20);
-                    doc.setFontSize(12);
-                    doc.text(headline, 10, 30);
-
-                    doc.setFontSize(10);
-                    doc.text(`Correo: ${email}`, 10, 40);
-                    doc.text(`Localización: ${location}`, 10, 50);
-
-                    doc.text("Sobre mí:", 10, 60);
-                    doc.text(about, 10, 70, { maxWidth: 190 });
-
-                    doc.text("Educación:", 10, 90);
-                    doc.text(education, 10, 100, { maxWidth: 190 });
-
-                    doc.text("Habilidades:", 10, 120);
-                    doc.text(skills, 10, 130, { maxWidth: 190 });
-
-                    doc.text("Intereses:", 10, 150);
-                    doc.text(interests, 10, 160, { maxWidth: 190 });
-
-                    doc.text("Lenguajes:", 10, 180);
-                    doc.text(languages, 10, 190, { maxWidth: 190 });
-
-                    // Guardar el archivo PDF
-                    doc.save("CV.pdf");
-                });
-        </script>
     </div>
 </Layout>
