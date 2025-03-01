@@ -1,134 +1,71 @@
 ---
-// filepath: /d:/sanji/Documentos/TeecBack/src/components/Carrusel.astro
 import Image from "astro/components/Image.astro";
-import AutoCar from "../img/AutoCar.png";
-import Aguakan from "../img/Aguakan.png";
-import CFE from "../img/CFE.png";
-import SAT from "../img/SAT.png";
-import JyC from "../img/JyC.png";
-import MoonPalace from "../img/MoonPalace.png";
-import Bepensa from "../img/Bepensa.png";
-import INEGI from "../img/INEGI.png";
+const logos = [
+  {src: "/logos/AutoCar.png", alt: "AutoCar"},
+  {src: "/logos/Aguakan.png", alt: "Aguakan"},
+  {src: "/logos/Bepensa.png", alt: "Bepensa"},
+  {src: "/logos/CFE.png", alt: "CFE"},
+  {src: "/logos/SAT.png", alt: "SAT"},
+  {src: "/logos/JyC.png", alt: "JyC"},
+  {src: "/logos/MoonPalace.png", alt: "MoonPalace"},
+  {src: "/public/logos/INEGI.png", alt: "INEGI"},
+];
 ---
 
 <!-- Empresas Destacadas -->
-<section class="mt-12 overflow-hidden">
-    <h2 class="text-3xl font-semibold text-gray-900 text-center">
-        Empresas que confían en nuestros egresados
-    </h2>
-    <div class="relative mt-6">
-        <div class="flex gap-20 animate-scroll">
+<section
+  class="relative w-full text-center flex flex-col justify-center items-center gap-5 px-4 py-20 sm:py-24 pointer-events-none">
+  <h2 class="text-3xl font-semibold text-gray-900 text-center">
+    Empresas que confían en nuestros egresados
+  </h2>
+  <div
+    class="w-full h-fit max-w-xl flex flex-col justify-center select-none overflow-hidden">
+    <div class="w-max flex flex-nowrap gap-[4rem] animate-slide-logos">
+      {
+        logos.concat(logos).map((logo) => (
+          <div class="aspect-square flex items-center justify-center size-20">
             <Image
-                src={SAT}
-                alt="CarruselImg"
-                class="w-24"
-                width={800}
-                height={700}
-                loading="lazy"
+              src={logo.src}
+              alt={logo.alt}
+              width={100}
+              height={100}
+              loading="lazy"
+              class="object-contain"
             />
-            <Image
-                src={CFE}
-                alt="CarruselImg"
-                class="w-24"
-                width={800}
-                height={700}
-                loading="lazy"
-            />
-            <Image
-                src={Aguakan}
-                alt="CarruselImg"
-                class="w-24"
-                width={800}
-                height={700}
-                loading="lazy"
-            />
-            <Image
-                src={AutoCar}
-                alt="CarruselImg"
-                class="w-24"
-                width={800}
-                height={700}
-                loading="lazy"
-            />
-            <!-- Repeat images to create a continuous loop -->
-            <Image
-                src={SAT}
-                alt="CarruselImg"
-                class="w-24"
-                width={800}
-                height={700}
-                loading="lazy"
-            />
-            <Image
-                src={CFE}
-                alt="CarruselImg"
-                class="w-24"
-                width={800}
-                height={700}
-                loading="lazy"
-            />
-            <Image
-                src={Aguakan}
-                alt="CarruselImg"
-                class="w-24"
-                width={800}
-                height={700}
-                loading="lazy"
-            />
-            <Image
-                src={AutoCar}
-                alt="CarruselImg"
-                class="w-24"
-                width={800}
-                height={700}
-                loading="lazy"
-            />
-            <Image
-                src={JyC}
-                alt="CarruselImg"
-                class="w-24"
-                width={800}
-                height={700}
-                loading="lazy"
-            />
-            <Image
-                src={MoonPalace}
-                alt="CarruselImg"
-                class="w-24"
-                width={800}
-                height={700}
-                loading="lazy"
-            />
-            <Image
-                src={Bepensa}
-                alt="CarruselImg"
-                class="w-24"
-                width={800}
-                height={700}
-                loading="lazy"
-            />
-            <Image
-                src={INEGI}
-                alt="CarruselImg"
-                class="w-24"
-                width={800}
-                height={700}
-                loading="lazy"
-            />
-        </div>
+          </div>
+        ))
+      }
     </div>
+  </div>
 </section>
 
 <style>
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(-100%);
-        }
+  .gradient {
+    mask: linear-gradient(
+      90deg,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+    webkitmask: linear-gradient(
+      90deg,
+      transparent,
+      black 20%,
+      black 80%,
+      black transparent
+    );
+  }
+  @keyframes slide-logos {
+    0% {
+      transform: translateX(0);
     }
-    .animate-scroll {
-        animation: scroll 30s linear infinite;
+    100% {
+      transform: translateX(-50%);
     }
+  }
+
+  .animate-slide-logos {
+    animation: slide-logos 30s linear infinite;
+  }
 </style>

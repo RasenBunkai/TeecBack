@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Header from "../components/Header.astro";
+import Testimonial from "@components/Testimonial.astro";
 import Carrusel from "@components/Carrusel.astro";
 ---
 
@@ -90,41 +91,7 @@ import Carrusel from "@components/Carrusel.astro";
                 </div>
             </div>
         </section>
-        <!-- Testimonios -->
-        <section class="mt-12">
-            <h2 class="text-3xl font-semibold text-gray-900 text-center">
-                Lo que dicen nuestros egresados
-            </h2>
-            <div class="grid md:grid-cols-3 gap-6 mt-6">
-                <div class="bg-white shadow-lg rounded-lg p-6">
-                    <p class="text-gray-700">
-                        “Gracias a la comunidad de egresados conseguí mi primer
-                        empleo en tecnología.”
-                    </p>
-                    <p class="text-gray-900 font-semibold mt-4">
-                        — Abraham V., Ingeniero de Software
-                    </p>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg p-6">
-                    <p class="text-gray-700">
-                        “Los recursos gratuitos me ayudaron a mejorar mis
-                        habilidades.”
-                    </p>
-                    <p class="text-gray-900 font-semibold mt-4">
-                        — Rebecca M., Marketing Digital
-                    </p>
-                </div>
-                <div class="bg-white shadow-lg rounded-lg p-6">
-                    <p class="text-gray-700">
-                        “La comunidad de egresados me ayudo a conseguir mi
-                        trabajo actual.”
-                    </p>
-                    <p class="text-gray-900 font-semibold mt-4">
-                        — Pedro D., Analista de Datos
-                    </p>
-                </div>
-            </div>
-        </section>
+        <Testimonial />
         <Carrusel />
     </div>
 </Layout>
