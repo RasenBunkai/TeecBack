@@ -8,8 +8,7 @@ import Modal from "@components/Modal.astro";
 ---
 
 <nav
-  class="top-0 sticky z-50 bg-indigo-950 mx-0 p-4 flex justify-between items-center h-16"
->
+  class="top-0 sticky z-50 bg-indigo-950 mx-0 p-4 flex justify-between items-center h-16">
   <!-- Logo -->
   <a href="/" class="text-2xl font-bold text-white">TeecBack</a>
 
@@ -17,15 +16,14 @@ import Modal from "@components/Modal.astro";
   <button
     id="menu-button"
     class="text-white block md:hidden focus:outline-none"
-  >
+    aria-expanded="false">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       stroke-width="2"
       stroke="currentColor"
-      class="w-6 h-6"
-    >
+      class="w-6 h-6">
       <path
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -36,8 +34,7 @@ import Modal from "@components/Modal.astro";
   <!-- Navigation menu -->
   <ul
     id="menu"
-    class="text-white flex-col md:flex md:flex-row md:space-x-6 absolute md:static top-16 left-0 w-full bg-indigo-950 md:w-auto transition-transform transform md:translate-x-0 -translate-x-full md:items-center md:justify-center"
-  >
+    class="text-white flex flex-col md:flex-row md:space-x-6 absolute md:static top-16 left-0 w-full bg-indigo-950 md:w-auto transition-transform -translate-x-full md:translate-x-0 md:items-center">
     <li class="flex justify-center">
       <a href="/" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"
         ><Home />Inicio</a
@@ -69,41 +66,4 @@ import Modal from "@components/Modal.astro";
 </nav>
 <Modal />
 
-<script>
-  // Mobile menu logic
-  document.getElementById("menu-button").addEventListener("click", function () {
-    const menu = document.getElementById("menu");
-    menu.classList.toggle("-translate-x-full");
-    menu.classList.toggle("translate-x-0");
-  });
-  // Modal logic
-  document.addEventListener("DOMContentLoaded", () => {
-    const modal = document.querySelector('[aria-labelledby="modal-title"]');
-    const openButton = document.getElementById("comunity-button");
-
-    // Función para mostrar el modal
-    const showModal = () => {
-      modal.classList.remove("hidden");
-      modal.classList.add("flex"); // Mostrar el modal
-    };
-
-    // Función para ocultar el modal
-    const hideModal = () => {
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
-    };
-    // Evento para abrir el modal
-    openButton.addEventListener("click", showModal);
-
-    // Detectar clic fuera del modal para cerrarlo
-    modal.addEventListener("click", (event) => {
-      if (event.target === modal) hideModal();
-    });
-
-    // Agregar lógica para un botón de cierre (si lo necesitas)
-    const closeButton = document.querySelector(".close-modal");
-    if (closeButton) {
-      closeButton.addEventListener("click", hideModal);
-    }
-  });
-</script>
+<script src="/src/scripts/nav.js" defer></script>
