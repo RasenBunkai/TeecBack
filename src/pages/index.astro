@@ -1,97 +1,65 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import TextCard from "@components/TextCard.astro";
 import Header from "../components/Header.astro";
 import Testimonial from "@components/Testimonial.astro";
 import Carrusel from "@components/Carrusel.astro";
 ---
 
 <Layout title="TeecBack">
-    <Header />
-    <div
-        class="mx-auto mt-4 p-4 grid max-w-6xl gap-4 md:grid-cols-2 lg:grid-cols-3"
-    >
-        <Card
-            title="¡Únete a nuestra comunidad de Discord!"
-            body="Ponte en contacto con otros egresados y comparte tus experiencias de cómo conseguiste tu primer trabajo o pide consejo para encontrarlo."
-            link="https://discord.gg/asTrBRpC3m"
-            imgSrc="/Graduados.jpg"
-            btntext="Unirme"
-            imgWidth="800"
-            imgHeight="600"
-        />
-        <Card
-            title="¿Problemas para hacer tu CV?"
-            body="Quizá podamos echarle un vistazo a tu CV y darte unos consejos para ayudarte a conseguir tu primer empleo."
-            link="/mejoraCV"
-            imgSrc="/Letter TEC.jpg"
-            btntext="Mejorar mi CV"
-            imgWidth="800"
-            imgHeight="600"
-        />
-        <Card
-            title="Recursos para egresados"
-            body="Accede a herramientas y materiales que te ayudarán en tu desarrollo profesional. Encuentra plantillas de CV, guías de entrevistas y más."
-            link="/recursos"
-            imgSrc="/Graduados Trabajo.jpg"
-            btntext="Ver recursos"
-            imgWidth="800"
-            imgHeight="600"
-        />
+  <Header />
+  <Carrusel />
+  <section class="container mx-auto px-14 pb-12">
+    <h2 class="text-3xl font-semibold text-gray-900 text-center">
+      Recursos Destacados
+    </h2>
+    <div class="grid md:grid-cols-3 gap-6 mt-6">
+      <TextCard
+        title="Plantillas de CV"
+        body="Descarga formatos profesionales y personaliza tu currículum."
+        link="https://rxresu.me/"
+        btntext="Ver más →"
+      />
+      <TextCard
+        title="Consejos para Entrevistas"
+        body="Aprende cómo responder preguntas clave y destacar en entrevistas."
+        link="https://www.linkedin.com/pulse/5-tips-para-destacar-en-una-entrevista-de-trabajo-lachamba/"
+        btntext="Ver más →"
+      />
+      <TextCard
+        title="Recursos para tu crecimiento"
+        body="Accede a herramientas que te ayudarán a prepararte mejor para el mundo laboral."
+        link="https://www.linkedin.com/pulse/las-mejores-herramientas-y-recursos-para-impulsar-tu-oziel-l%C3%B3pez--8ljfc/"
+        btntext="Ver más →"
+      />
     </div>
-    <div class="container mx-auto px-14 pb-12">
-        <!-- Recursos Destacados -->
-        <section class="mt-12">
-            <h2 class="text-3xl font-semibold text-gray-900 text-center">
-                Recursos Destacados
-            </h2>
-            <div class="grid md:grid-cols-3 gap-6 mt-6">
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <h3 class="text-xl font-semibold">Plantillas de CV</h3>
-                    <p class="text-gray-600">
-                        Descarga formatos profesionales y personaliza tu
-                        currículum.
-                    </p>
-                    <a
-                        href="https://rxresu.me/"
-                        target="_blank"
-                        class="text-blue-600 font-semibold hover:text-blue-800 hover:underline"
-                        >Ver más →</a
-                    >
-                </div>
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <h3 class="text-xl font-semibold">
-                        Consejos para Entrevistas
-                    </h3>
-                    <p class="text-gray-600">
-                        Aprende cómo responder preguntas clave y destacar en
-                        entrevistas.
-                    </p>
-                    <a
-                        href="https://www.linkedin.com/pulse/5-tips-para-destacar-en-una-entrevista-de-trabajo-lachamba/"
-                        target="_blank"
-                        class="text-blue-600 font-semibold hover:text-blue-800 hover:underline"
-                        >Ver más →</a
-                    >
-                </div>
-                <div class="bg-white shadow-md rounded-lg p-6">
-                    <h3 class="text-xl font-semibold">
-                        Recursos para tu crecimiento
-                    </h3>
-                    <p class="text-gray-600">
-                        Accede a herramientas que te ayudarán a prepararte mejor
-                        para el mundo laboral.
-                    </p>
-                    <a
-                        href="https://www.linkedin.com/pulse/las-mejores-herramientas-y-recursos-para-impulsar-tu-oziel-l%C3%B3pez--8ljfc/"
-                        target="_blank"
-                        class="text-blue-600 font-semibold hover:text-blue-800 hover:underline"
-                        >Ver más →</a
-                    >
-                </div>
-            </div>
-        </section>
-        <Testimonial />
-        <Carrusel />
-    </div>
+  </section>
+  <div
+    class="mx-auto mt-4 p-4 grid max-w-6xl gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <Card
+      title="¡Únete a nuestra comunidad de Discord!"
+      body="Ponte en contacto con otros egresados y comparte tus experiencias de cómo conseguiste tu primer trabajo o pide consejo para encontrarlo."
+      link="https://discord.gg/asTrBRpC3m"
+      imgSrc="/Graduados.jpg"
+      btntext="Unirme"
+    />
+    <Card
+      title="¿Problemas para hacer tu CV?"
+      body="Quizá podamos echarle un vistazo a tu CV y darte unos consejos para ayudarte a conseguir tu primer empleo."
+      link="/mejoraCV"
+      imgSrc="/Letter TEC.jpg"
+      btntext="Mejorar mi CV"
+    />
+    <Card
+      title="Recursos para egresados"
+      body="Accede a herramientas y materiales que te ayudarán en tu desarrollo profesional. Encuentra plantillas de CV, guías de entrevistas y más."
+      link="/recursos"
+      imgSrc="/Graduados Trabajo.jpg"
+      btntext="Ver recursos"
+    />
+  </div>
+  <div class="container mx-auto px-14 pb-12">
+    <Testimonial />
+  </div>
 </Layout>
