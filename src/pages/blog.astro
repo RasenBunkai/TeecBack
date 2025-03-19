@@ -1,11 +1,43 @@
 ---
 import Layout from "src/layouts/Layout.astro";
 import NavBar from "@components/NavBar.astro";
+import Image from "astro/components/Image.astro";
 ---
 
-<Layout title="Blog">
+<Layout title="TeecBack | Blog">
   <NavBar />
-  <div>
-    <p class="font-medium text-3xl text-blue-900 text-center">Proximamente...</p>
-  </div>
+  <section class="bg-indigo-500">
+    <div class="py-8 px-4 mx-auto w-full lg:py-16 lg:px-6">
+      <div class="mx-auto max-w-screen-sm text-center">
+        <Image
+          src="/Tucan.png"
+          alt="NotFound-Ilustration"
+          class="mx-auto w-64 h-64 lg:w-96 lg:h-96"
+          width={1024}
+          height={1024}
+          loading="eager"
+        />
+        <p
+          class="mb-4 text-3xl tracking-tight font-bold md:text-4xl text-white">
+          Proximamente...
+        </p>
+        <p class="mb-4 text-lg tracking-tight font-light text-white">
+            Estamos trabajando arduamente para traerte contenido increíble. ¡Vuelve pronto para más actualizaciones!
+        </p>
+        <a
+          href="/"
+          class="inline-flex text-blue-600 bg-white hover:bg-blue-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center my-4"
+          >Volver al inicio</a
+        >
+      </div>
+    </div>
+  </section>
 </Layout>
+<style>
+  img{
+    mask-image: linear-gradient(
+      black 90%,
+      transparent
+    );
+  }
+</style>
