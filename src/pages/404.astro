@@ -1,9 +1,33 @@
 ---
 import Layout from "src/layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
 ---
 <Layout title="TeecBack">
-    <div class="flex flex-col items-center justify-center h-screen">
-        <h1 class="text-4xl font-bold">404</h1>
-        <p class="text-lg">Page not found</p>
+  <section class="bg-indigo-500">
+    <div class="py-8 px-4 mx-auto w-full lg:py-16 lg:px-6">
+      <div class="mx-auto max-w-screen-sm text-center">
+        <Image
+          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/404/404-computer.svg"
+          alt="NotFound-Ilustration"
+          class="mx-auto w-64 h-64 lg:w-96 lg:h-96"
+          width={1024}
+          height={1024}
+          loading="eager"
+        />
+        <p
+          class="mb-4 text-3xl tracking-tight font-bold md:text-4xl text-white">
+          Whoops! Esa página no existe.
+        </p>
+        <p class="mb-4 text-lg tracking-tight font-light text-white">
+          Lo sentimos, no podemos encontrar esa página. Encontrarás mucho por
+          explorar en la página de inicio.
+        </p>
+        <a
+          href="/"
+          class="inline-flex text-blue-600 bg-white hover:bg-blue-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center my-4"
+          >Volver al inicio</a
+        >
+      </div>
     </div>
+  </section>
 </Layout>

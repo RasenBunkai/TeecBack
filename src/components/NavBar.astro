@@ -10,7 +10,9 @@ import Modal from "@components/Modal.astro";
 <nav
   class="top-0 sticky z-50 bg-indigo-950 mx-0 p-4 flex justify-between items-center h-16">
   <!-- Logo -->
-  <a href="/" class="text-2xl font-bold text-white">TeecBack</a>
+  <a href="/" class="text-2xl font-bold text-white">
+    TeecBack</a
+  >
 
   <!-- Hamburger menu button (visible on mobile) -->
   <button
@@ -35,11 +37,6 @@ import Modal from "@components/Modal.astro";
   <ul
     id="menu"
     class="text-white flex flex-col md:flex-row md:space-x-6 absolute md:static top-16 left-0 w-full bg-indigo-950 md:w-auto transition-transform -translate-x-full md:translate-x-0 md:items-center">
-    <li class="flex justify-center">
-      <a href="/" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"
-        ><Home />Inicio</a
-      >
-    </li>
     <li class="flex justify-center">
       <a href="/form" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"
         ><Forms />Encuestas</a

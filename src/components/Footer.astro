@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import Image from "astro/components/Image.astro";
 ---
 
 <footer class="bg-indigo-950">
@@ -10,9 +10,9 @@ import { Image } from "astro:assets";
                 class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
             >
                 <Image
-                    src="/Shimadaclan.png"
-                    alt="Shimada"
-                    class="h-8"
+                    src="/Tucan.png"
+                    alt="TB_Logo"
+                    class="w-9"
                     width="32"
                     height="32"
                 />
@@ -26,26 +26,9 @@ import { Image } from "astro:assets";
             >
                 <li>
                     <a
-                        href="https://rasen-portfolio.vercel.app/"
-                        target="_blank"
+                        href="/blog"
                         class="hover:bg-blue-950 p-2 rounded me-4 md:me-6"
-                        >Mi Blog</a
-                    >
-                </li>
-                <li>
-                    <a
-                        href="https://github.com/RasenBunkai"
-                        target="_blank"
-                        class="hover:bg-blue-950 p-2 rounded me-4 md:me-6"
-                        >GitHub</a
-                    >
-                </li>
-                <li>
-                    <a
-                        href="https://www.linkedin.com/in/emiliano-salgado-mart%C3%ADnez-0032732a3/"
-                        target="_blank"
-                        class="hover:bg-blue-950 p-2 rounded me-4 md:me-6"
-                        >Linkedin</a
+                        >Blog</a
                     >
                 </li>
                 <li>
@@ -60,7 +43,7 @@ import { Image } from "astro:assets";
         <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
         <span
             class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
-            >© 2024 <a href="/" class="hover:underline">Teecback</a></span
+            >© 2024-2025 <a href="/" class="hover:underline">Teecback</a> Todos los derechos reservados</span
         >
     </div>
 </footer>

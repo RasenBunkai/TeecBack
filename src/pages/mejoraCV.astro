@@ -1,113 +1,111 @@
 ---
 import Layout from "src/layouts/Layout.astro";
 import NavBar from "@components/NavBar.astro";
-import CvForm from "@components/CvForm.astro";
+import CvForm from "@components/CvForm.jsx";
 ---
 
 <Layout title="TeecBack | Mejora tu Cv">
-    <NavBar />
-    <div class="min-h-screen p-6">
-        <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
-            <h1 class="text-4xl font-semibold text-center text-gray-800 mb-6">
-                Mejora tu CV
-            </h1>
+  <NavBar />
+  <div class="min-h-screen p-6">
+    <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
+      <h1 class="text-4xl font-semibold text-center text-gray-800 mb-6">
+        Mejora tu CV
+      </h1>
 
-            <!-- Intro Section -->
-            <p class="text-gray-600 text-center mb-8">
-                Encuentra herramientas, plantillas y consejos prácticos para
-                destacar en el mercado laboral. ¡Crea un CV que deje huella!
+      <!-- Intro Section -->
+      <p class="text-gray-600 text-center mb-8">
+        Encuentra herramientas, plantillas y consejos prácticos para destacar en
+        el mercado laboral. ¡Crea un CV que deje huella!
+      </p>
+      <!-- Plantillas de CV -->
+      <div class="mb-8">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+          Plantillas de CV
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div
+            class="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-lg">
+            <h3 class="text-lg font-bold text-gray-700">
+              Plantilla Profesional
+            </h3>
+            <p class="text-sm text-gray-600">
+              Ideal para áreas de tecnología y negocios.
             </p>
-            <!-- Plantillas de CV -->
-            <div class="mb-8">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">
-                    Plantillas de CV
-                </h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div
-                        class="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-lg"
-                    >
-                        <h3 class="text-lg font-bold text-gray-700">
-                            Plantilla Profesional
-                        </h3>
-                        <p class="text-sm text-gray-600">
-                            Ideal para áreas de tecnología y negocios.
-                        </p>
-                        <a
-                            href="https://rxresu.me/"
-                            class="block mt-4 text-center bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-                            target="_blank">Crea tu CV aquí</a
-                        >
-                    </div>
-                    <div
-                        class="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-lg"
-                    >
-                        <h3 class="text-lg font-bold text-gray-700">
-                            Plantilla Creativa
-                        </h3>
-                        <p class="text-sm text-gray-600">
-                            Perfecta para diseñadores y áreas creativas.
-                        </p>
-                        <a
-                            href="https://career.io/"
-                            class="block mt-4 text-center bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-                            target="_blank">Crea tu CV aquí</a
-                        >
-                    </div>
-                </div>
-            </div>
-
-            <!-- Consejos para mejorar el CV -->
-            <div class="mb-8">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">
-                    Consejos para mejorar tu CV
-                </h2>
-                <ul class="list-disc list-inside text-gray-600">
-                    <li class="mb-2">
-                        Utiliza un diseño limpio y profesional.
-                    </li>
-                    <li class="mb-2">
-                        Enfócate en tus logros cuantificables y habilidades
-                        clave.
-                    </li>
-                    <li class="mb-2">
-                        Asegúrate de adaptar tu CV al puesto que buscas.
-                    </li>
-                    <li class="mb-2">Revisa la ortografía y gramática.</li>
-                </ul>
-            </div>
-            <CvForm/>
-
-            <!-- Recursos adicionales -->
-            <div>
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">
-                    Recursos adicionales
-                </h2>
-                <ul class="flex flex-row flex-wrap gap-4">
-                    <li class="mb-2">
-                        <a
-                            href="https://www.linkedin.com/pulse/c%C3%B3mo-hacer-una-carta-de-presentaci%C3%B3n-efectiva-luis-prado-gonz%C3%A1lez/"
-                            class="text-white bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded"
-                            target="_blank"
-                            >Redacta una carta de presentación</a
-                        >
-                    </li>
-                    <li class="mb-2">
-                        <a
-                            href="https://www.linkedin.com/pulse/pdf-perfil-de-linkedin-optimizado-destaca-tus-con-esta-pendino/"
-                            class="text-white bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded"
-                            target="_blank">Optimiza tu perfil de LinkedIn</a
-                        >
-                    </li>
-                    <li class="mb-2">
-                        <a
-                            href="https://www.linkedin.com/pulse/c%C3%B3mo-hacer-un-buen-perfil-de-linkedin-6-consejos-para-luis-barreto/"
-                            class="text-white bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded"
-                            target="_blank"
-                            >Como crear un perfil en LinkedIn</a
-                        >
-                    </li>
-                </ul>
-            </div>
+            <a
+              href="https://rxresu.me/"
+              class="block mt-4 text-center bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+              target="_blank">Crea tu CV aquí</a
+            >
+          </div>
+          <div
+            class="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-lg">
+            <h3 class="text-lg font-bold text-gray-700">Plantilla Creativa</h3>
+            <p class="text-sm text-gray-600">
+              Perfecta para diseñadores y áreas creativas.
+            </p>
+            <a
+              href="https://career.io/"
+              class="block mt-4 text-center bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+              target="_blank">Crea tu CV aquí</a
+            >
+          </div>
         </div>
+      </div>
+
+      <!-- Consejos para mejorar el CV -->
+      <div class="mb-8">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+          Consejos para mejorar tu CV
+        </h2>
+        <ul class="text-gray-600">
+          <li class="mb-2">
+            <span class="text-green-700">✔</span>
+            Utiliza un diseño limpio y profesional.
+          </li>
+          <li class="mb-2">
+            <span class="text-green-700">✔</span>
+            Enfócate en tus logros cuantificables y habilidades clave.
+          </li>
+          <li class="mb-2">
+            <span class="text-green-700">✔</span>
+            Asegúrate de adaptar tu CV al puesto que buscas.
+          </li>
+          <li class="mb-2">
+            <span class="text-green-700">✔</span>
+            Revisa la ortografía y gramática.
+          </li>
+        </ul>
+      </div>
+      <CvForm client:load />
+      <!-- Recursos adicionales -->
+      <div>
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+          Recursos adicionales
+        </h2>
+        <ul class="flex flex-row flex-wrap gap-4">
+          <li class="mb-2">
+            <a
+              href="https://www.linkedin.com/pulse/c%C3%B3mo-hacer-una-carta-de-presentaci%C3%B3n-efectiva-luis-prado-gonz%C3%A1lez/"
+              class="text-white bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded"
+              target="_blank">Redacta una carta de presentación</a
+            >
+          </li>
+          <li class="mb-2">
+            <a
+              href="https://www.linkedin.com/pulse/pdf-perfil-de-linkedin-optimizado-destaca-tus-con-esta-pendino/"
+              class="text-white bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded"
+              target="_blank">Optimiza tu perfil de LinkedIn</a
+            >
+          </li>
+          <li class="mb-2">
+            <a
+              href="https://www.linkedin.com/pulse/c%C3%B3mo-hacer-un-buen-perfil-de-linkedin-6-consejos-para-luis-barreto/"
+              class="text-white bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded"
+              target="_blank">Como crear un perfil en LinkedIn</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
 </Layout>
