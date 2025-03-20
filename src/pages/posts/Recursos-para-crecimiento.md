@@ -51,6 +51,6 @@ Las habilidades técnicas y blandas son igual de importantes en el entorno labor
     <li><strong>Duolingo:</strong> Aprende idiomas de forma gratuita y divertida.</li>
     <li><strong>CodeAcademy:</strong> Cursos interactivos para aprender a programar.</li>
     <li><strong>Coursera y edX:</strong> Cursos sobre liderazgo, comunicación y habilidades interpersonales.</li>
-    <li><strong>Mind Tools:</strong>Recursos para mejorar habilidades como la gestión del tiempo y la comunicación efectiva.</li>
+    <li><strong>Mind Tools:</strong> Recursos para mejorar habilidades como la gestión del tiempo y la comunicación efectiva.</li>
   </ul>
 Invertir en tu desarrollo profesional no solo te abrirá más oportunidades, sino que también te ayudará a sentirte más preparado y seguro en tu carrera. Utiliza estas herramientas y recursos para mejorar tus habilidades, conectar con otros profesionales y destacar en el mercado laboral.

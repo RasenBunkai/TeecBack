@@ -4,173 +4,158 @@ import NavBar from "@components/NavBar.astro";
 ---
 
 <Layout title="TeecBack | Recursos">
-    <NavBar />
-    <div class="min-h-screen p-6">
-        <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
-            <h1 class="text-4xl font-semibold text-center text-gray-900">
-                Recursos para Egresados
-            </h1>
-            <p class="text-center text-gray-600 mt-4 max-w-2xl mx-auto">
-                Encuentra herramientas y guías que te ayudarán a mejorar tu
-                empleabilidad y desarrollo profesional.
-            </p>
-            <!-- Grid principal -->
-            <div
-                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-8 gap-4 mt-8"
-            >
-                <!-- Plantillas de CV -->
-                <div
-                    class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-5 row-span-3"
-                >
-                    <h2 class="text-xl font-semibold text-gray-800">
-                        Plantillas de CV
-                    </h2>
-                    <p class="text-gray-600 mt-2">
-                        Descarga formatos de CV profesionales listos para editar
-                        y mejorar tu presentación laboral.
-                    </p>
-                    <a
-                        href="https://app.resumepad.com/"
-                        target="_blank"
-                        class="block mt-4 text-blue-600 font-semibold hover:underline"
-                    >
-                        Ver plantillas →
-                    </a>
-                </div>
-
-                <!-- Guía de entrevistas -->
-                <div
-                    class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-3 row-span-3"
-                >
-                    <h2 class="text-xl font-semibold text-gray-800">
-                        Guía de entrevistas
-                    </h2>
-                    <p class="text-gray-600 mt-2">
-                        Aprende cómo responder preguntas clave y destacar en
-                        entrevistas de trabajo.
-                    </p>
-                    <a
-                        href="https://www.indeed.com/orientacion-profesional/entrevistas/guia-preguntas-para-entrevista"
-                        target="_blank"
-                        class="block mt-4 text-blue-600 font-semibold hover:underline"
-                    >
-                        Leer guía →
-                    </a>
-                </div>
-
-                <!-- Cursos y certificaciones -->
-                <div
-                    class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2 row-span-3"
-                >
-                    <h2 class="text-xl font-semibold text-gray-800">
-                        Recursos educativos
-                    </h2>
-                    <p class="text-gray-600 mt-2">
-                        Encuentra libros, guías y material gratuito para mejorar
-                        tus habilidades.
-                    </p>
-                    <a
-                        href="https://www.linkedin.com/pulse/10-recursos-esenciales-para-impulsar-tu-desarrollo-n%C3%BA%C3%B1ez-zapata-4tm3c/"
-                        target="_blank"
-                        class="block mt-4 text-blue-600 font-semibold hover:underline"
-                    >
-                        Explorar recursos →
-                    </a>
-                </div>
-
-                <!-- Red de egresados -->
-                <div
-                    class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-3 row-span-3"
-                >
-                    <h2 class="text-xl font-semibold text-gray-800">
-                        Red de Egresados
-                    </h2>
-                    <p class="text-gray-600 mt-2">
-                        Conéctate con otros egresados para intercambiar
-                        experiencias y oportunidades laborales.
-                    </p>
-                    <a
-                        href="https://chat.whatsapp.com/CfkWnzzusD3E4Ug92fOsCr"
-                        target="_blank"
-                        class="block mt-4 text-blue-600 font-semibold hover:underline"
-                    >
-                        Únete a la red →
-                    </a>
-                </div>
-
-                <!-- Eventos y webinars -->
-                <div
-                    class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3 row-span-4"
-                >
-                    <h2 class="text-xl font-semibold text-gray-800">
-                        Eventos y Webinars
-                    </h2>
-                    <p class="text-gray-600 mt-2">
-                        Mantente informado sobre conferencias, talleres y
-                        charlas en línea sobre empleabilidad.
-                    </p>
-                    <a
-                        href="https://business.linkedin.com/es-mx/talent-solutions/recruiting-best-practices-webinars"
-                        target="_blank"
-                        class="block mt-4 text-blue-600 font-semibold hover:underline"
-                    >
-                        Ver eventos →
-                    </a>
-                </div>
-
-                <!-- Consejos para LinkedIn -->
-                <div
-                    class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-1 md:col-span-1 lg:col-span-2 row-span-3"
-                >
-                    <h2 class="text-xl font-semibold text-gray-800">
-                        Consejos para LinkedIn
-                    </h2>
-                    <p class="text-gray-600 mt-2">
-                        Aprende a optimizar tu perfil de LinkedIn para atraer
-                        mejores oportunidades de empleo.
-                    </p>
-                    <a
-                        href="https://www.linkedin.com/pulse/c%C3%B3mo-optimizar-tu-perfil-de-linkedin-para-atraer-ivan-keclach-eyfff/"
-                        target="_blank"
-                        class="block mt-4 text-blue-600 font-semibold hover:underline"
-                    >
-                        Ver consejos →
-                    </a>
-                </div>
-
-                <!-- Freelance y Trabajo Remoto -->
-                <div
-                    class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-3 row-span-3"
-                >
-                    <h2 class="text-xl font-semibold text-gray-800">
-                        Freelance y Trabajo Remoto
-                    </h2>
-                    <p class="text-gray-600 mt-2">
-                        Encuentra plataformas y consejos para trabajar como
-                        freelancer o en remoto.
-                    </p>
-                    <a
-                        href="https://www.linkedin.com/pulse/c%C3%B3mo-encontrar-oportunidades-de-empleo-remoto-o-que-se-lucia-carranza-wjdyf/"
-                        target="_blank"
-                        class="block mt-4 text-blue-600 font-semibold hover:underline"
-                    >
-                        Ver recursos →
-                    </a>
-                </div>
-
-                <!-- Próximamente -->
-                <div
-                    class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3 row-span-2"
-                >
-                    <h2 class="text-xl font-semibold text-gray-800">
-                        Próximamente
-                    </h2>
-                    <p class="text-gray-600 mt-2">
-                        Estamos trabajando en nuevos recursos para ayudarte en
-                        tu desarrollo profesional.
-                    </p>
-                </div>
-            </div>
+  <NavBar />
+  <div class="min-h-screen p-6">
+    <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
+      <h1 class="text-4xl font-semibold text-center text-gray-900">
+        Recursos para Egresados
+      </h1>
+      <p class="text-center text-gray-600 mt-4 max-w-2xl mx-auto">
+        Encuentra herramientas y guías que te ayudarán a mejorar tu
+        empleabilidad y desarrollo profesional.
+      </p>
+      <!-- Grid principal -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-8 gap-4 mt-8">
+        <!-- Plantillas de CV -->
+        <div
+          class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-5 row-span-3">
+          <h2 class="text-xl font-semibold text-gray-800">Plantillas de CV</h2>
+          <p class="text-gray-600 mt-2">
+            Descarga formatos de CV profesionales listos para editar y mejorar
+            tu presentación laboral.
+          </p>
+          <a
+            href="https://app.resumepad.com/"
+            target="_blank"
+            class="block mt-4 text-blue-600 font-semibold hover:underline">
+            Ver plantillas →
+          </a>
         </div>
+
+        <!-- Guía de entrevistas -->
+        <div
+          class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-3 row-span-3">
+          <h2 class="text-xl font-semibold text-gray-800">
+            Guía de entrevistas
+          </h2>
+          <p class="text-gray-600 mt-2">
+            Aprende cómo responder preguntas clave y destacar en entrevistas de
+            trabajo.
+          </p>
+          <a
+            href="https://www.indeed.com/orientacion-profesional/entrevistas/guia-preguntas-para-entrevista"
+            target="_blank"
+            class="block mt-4 text-blue-600 font-semibold hover:underline">
+            Leer guía →
+          </a>
+        </div>
+
+        <!-- Cursos y certificaciones -->
+        <div
+          class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-2 row-span-3">
+          <h2 class="text-xl font-semibold text-gray-800">
+            Recursos educativos
+          </h2>
+          <p class="text-gray-600 mt-2">
+            Encuentra libros, guías y material gratuito para mejorar tus
+            habilidades.
+          </p>
+          <a
+            href="https://www.linkedin.com/pulse/10-recursos-esenciales-para-impulsar-tu-desarrollo-n%C3%BA%C3%B1ez-zapata-4tm3c/"
+            target="_blank"
+            class="block mt-4 text-blue-600 font-semibold hover:underline">
+            Explorar recursos →
+          </a>
+        </div>
+
+        <!-- Red de egresados -->
+        <div
+          class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3 row-span-3">
+          <h2 class="text-xl font-semibold text-gray-800">Red de Egresados</h2>
+          <p class="text-gray-600 mt-2">
+            Conéctate con otros egresados para intercambiar experiencias y
+            oportunidades laborales.
+          </p>
+          <a
+            href="https://chat.whatsapp.com/CfkWnzzusD3E4Ug92fOsCr"
+            target="_blank"
+            class="block mt-4 text-blue-600 font-semibold hover:underline">
+            Únete a la red →
+          </a>
+        </div>
+
+        <!-- Eventos y webinars -->
+        <div
+          class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3 row-span-4">
+          <h2 class="text-xl font-semibold text-gray-800">
+            Eventos y Webinars
+          </h2>
+          <p class="text-gray-600 mt-2">
+            Mantente informado sobre conferencias, talleres y charlas en línea
+            sobre empleabilidad.
+          </p>
+          <a
+            href="https://business.linkedin.com/es-mx/talent-solutions/recruiting-best-practices-webinars"
+            target="_blank"
+            class="block mt-4 text-blue-600 font-semibold hover:underline">
+            Ver eventos →
+          </a>
+        </div>
+
+        <!-- Consejos para LinkedIn -->
+        <div
+          class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-2 row-span-3">
+          <h2 class="text-xl font-semibold text-gray-800">
+            Consejos para LinkedIn
+          </h2>
+          <p class="text-gray-600 mt-2">
+            Aprende a optimizar tu perfil de LinkedIn para atraer mejores
+            oportunidades de empleo.
+          </p>
+          <a
+            href="https://www.linkedin.com/pulse/c%C3%B3mo-optimizar-tu-perfil-de-linkedin-para-atraer-ivan-keclach-eyfff/"
+            target="_blank"
+            class="block mt-4 text-blue-600 font-semibold hover:underline">
+            Ver consejos →
+          </a>
+        </div>
+
+        <!-- Freelance y Trabajo Remoto -->
+        <div
+          class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-3 row-span-3">
+          <h2 class="text-xl font-semibold text-gray-800">
+            Freelance y Trabajo Remoto
+          </h2>
+          <p class="text-gray-600 mt-2">
+            Encuentra plataformas y consejos para trabajar como freelancer o en
+            remoto.
+          </p>
+          <a
+            href="https://www.linkedin.com/pulse/c%C3%B3mo-encontrar-oportunidades-de-empleo-remoto-o-que-se-lucia-carranza-wjdyf/"
+            target="_blank"
+            class="block mt-4 text-blue-600 font-semibold hover:underline">
+            Ver recursos →
+          </a>
+        </div>
+        <div
+          class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3 row-span-2">
+          <h2 class="text-xl font-semibold text-gray-800">
+            Redacta una carta de presentación
+          </h2>
+          <p class="text-gray-600 mt-2">
+            Descubre herramientas y plataformas esenciales para mejorar tus
+            habilidades, optimizar tu productividad y destacar en el mercado
+            laboral.
+          </p>
+          <a
+            href="../posts/Redactar-carta-presentacion"
+            target="_blank"
+            class="block mt-4 text-blue-600 font-semibold hover:underline">
+            Ir al blog →
+          </a>
+        </div>
+      </div>
     </div>
+  </div>
 </Layout>

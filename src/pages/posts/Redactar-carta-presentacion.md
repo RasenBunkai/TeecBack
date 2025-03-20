@@ -9,35 +9,36 @@ tags: ["carta de presentación", "empleo", "currículum", "consejos laborales", 
 La carta de presentación, también llamada carta de motivación, va de la mano del currículum vitae en una solicitud de trabajo.
 Para algunos reclutadores, la carta de presentación es incluso más importante que el currículum, ya que el contenido de ella es un reflejo de lo que puedes aportar a la empresa y de cómo encajarías en ella.
 
-## ¿Cómo hacer una carta de presentación?
-
+<h3 class="mt-3 text-xl text-indigo-600 font-medium">¿Cómo hacer una carta de presentación?</h3>
 Para hacer una carta de presentación debes:
+  <ul class="list-disc list-inside pl-5 my-4 space-y-2 text-gray-700 text-left">
+    <li>Tiene que ser breve (un folio de 3 o 4 párrafos como máximo), concisa y adaptada al lugar de trabajo.</li>
+    <li>Debes hacer una carta de presentación para cada oferta de trabajo.</li>
+    <li>Utiliza el mismo tipo de papel, que tiene que ser blanco y de calidad, para la carta y para el currículum.</li>
+    <li>Ten cuidado con la redacción, la ortografía y la presentación.</li>
+    <li>Escríbela a computadora o si se solicita la redacción a mano, procura escribir con buena letra.</li>
+    <li>Deja márgenes anchos.</li>
+    <li> Utiliza un estilo formal y cordial y un tono positivo.</li>
+  </ul>
 
-- Tiene que ser breve (un folio de 3 o 4 párrafos como máximo), concisa y adaptada al lugar de trabajo.
-- Debes hacer una carta de presentación para cada oferta de trabajo.
-- Utiliza el mismo tipo de papel, que tiene que ser blanco y de calidad, para la carta y para el currículum.
-- Ten cuidado con la redacción, la ortografía y la presentación.
-- Escríbela con ordenador. Si se solicita la redacción a mano, procura escribir con buena letra.
-- Deja márgenes anchos.
-- Utiliza un estilo formal y cordial y un tono positivo.
+<h3 class="mt-3 text-xl text-indigo-600 font-medium">¿Qué hay que incluir en una carta de presentación?</h3>
+<ul class="list-disc list-inside pl-5 my-4 space-y-2 text-gray-700 text-left">
+    <li><strong>Cabecera:</strong> Cita la referencia o procedencia del anuncio, fecha, nombre y dirección de la persona o empresa a quien va dirigida la carta y/o por qué envías el currículum.</li>
+    <li><strong>Presentación:</strong>Explica brevemente quién eres, qué has hecho hasta este momento y cuál es tu objetivo profesional.</li>
+    <li><strong>Explicación de tu idoneidad para el puesto:</strong>Cita las competencias personales que puedan aportar un valor añadido al trabajo al que optas.</li>
+    <li><strong>Despedida:</strong> Despídete de manera cordial solicitando una entrevista personal. Escribe tu nombre y apellidos y no te olvides de firmar.</li>
+    <li><strong>Firma, nombre, dirección completa y número de teléfono.</strong></li>
+  </ul>
 
-## ¿Qué hay que incluir en una carta de presentación?
+<h3 class="mt-3 text-xl text-indigo-600 font-medium">¿Qué no hay que incluir en una carta de presentación?</h3>
+  <ul class="list-disc pl-5 my-4 space-y-2 text-gray-700 text-left">
+    <li>Faltas de ortografía o gramática.</li>
+    <li>Criticar previas experiencias laborales o educativas.</li>
+    <li>Dar información incorrecta.</li>
+    <li>Dirección de email poco profesional.</li>
+  </ul>
 
-- **Cabecera:** Cita la referencia o procedencia del anuncio, fecha, nombre y dirección de la persona o empresa a quien va dirigida la carta y/o por qué envías el currículum.
-- **Presentación:** Explica brevemente quién eres, qué has hecho hasta este momento y cuál es tu objetivo profesional.
-- **Explicación de tu idoneidad para el puesto:** Tienes que intentar que la persona encargada de seleccionar al trabajador vea que conoces el puesto de trabajo y la empresa. Cita las competencias personales que puedan aportar un valor añadido al trabajo al que optas.
-- **Despedida:** Despídete de manera cordial solicitando una entrevista personal. Escribe tu nombre y apellidos y no te olvides de firmar.
-- **Firma, nombre, dirección completa y número de teléfono.**
-
-## ¿Qué no hay que incluir en una carta de presentación?
-
-- Faltas de ortografía o gramática.
-- Preguntar el salario o demandar un salario bastante alto.
-- Criticar previas experiencias laborales o educativas.
-- Dar información incorrecta.
-- Dirección de email poco profesional.
-
-## Carta de Presentación online - Ejemplo
+<h3 class="mt-3 text-xl text-indigo-600 font-medium">Carta de Presentación - Ejemplo</h3>
 
 **Nombre y Apellidos**  
 **Dirección**  
@@ -45,40 +46,24 @@ Para hacer una carta de presentación debes:
 **Móvil: 616.000.000**  
 **nombre@cneurocoaching.com**  
 
-**Nombre de la empresa** \<Fecha\>  
+**Nombre de la empresa** \ **<Fecha\>**  
 **D. Nombre Apellidos**  
 **Cargo de la persona**  
 
 **Estimados:**  
 
-En respuesta a su anuncio publicado en _____________ , me dirijo a ustedes con el fin de remitirles mi Currículum Vitae para aspirar a la vacante de ABC.
+*En respuesta a su anuncio publicado en _____________ , me dirijo a ustedes con el fin de remitirles mi Currículum Vitae para aspirar a la vacante de ABC.*
 
-No sólo cumplo con los requisitos exigidos, ya que tengo una Licenciatura en Derecho con especialidad en Derecho Mercantil, un buen expediente académico y alto nivel de inglés, sino que además, actualmente estoy cursando un Máster en Derecho Tributario, lo que puede ser de gran utilidad para cumplir con las necesidades y responsabilidades que el puesto de abogado requiere y de esta manera colaborar al continuo desarrollo de [Nombre de la empresa].
-
-Espero tener la oportunidad de conversar con ustedes en una entrevista para personalmente exponerles mis conocimientos y mi deseo de formar parte de su grupo de trabajo.
-
-Quedo a su disposición para ampliar cuanta información estimen necesaria.
-
-Reciban un cordial saludo,  
+*No sólo cumplo con los requisitos exigidos, ya que tengo una Licenciatura en Derecho con especialidad en Derecho Mercantil, un buen expediente académico y alto nivel de inglés, sino que además, actualmente estoy cursando un Máster en Derecho Tributario, lo que puede ser de gran utilidad para cumplir con las necesidades y responsabilidades que el puesto de abogado requiere y de esta manera colaborar al continuo desarrollo de [Nombre de la empresa].*
+*Espero tener la oportunidad de conversar con ustedes en una entrevista para personalmente exponerles mis conocimientos y mi deseo de formar parte de su grupo de trabajo.*
+*Quedo a su disposición para ampliar cuanta información estimen necesaria.*
+*Reciban un cordial saludo,*  
 
 **Nombre Apellidos**  
 
----
 
-## Carta de Presentación - Plantilla para descargar
+<h3 class="mt-3 text-xl text-indigo-600 font-medium">Carta de Presentación - Plantilla para descargar</h3>
 
 Aunque la empresa no solicite que le envíes una carta de presentación, siempre debes intentar enviar tu Curriculum Vitae acompañado de su respectiva carta. Así que aquí te comparto 3 modelos de Carta de Presentación, las que puedes modificar según el puesto:
 
-[Haz clic aquí para descargar la plantilla de Carta de Presentación](#) o [este modelo de Carta de Presentación Online](#).
-
-## Notas Adicionales
-
-### Nota 1
-
-En el caso de cambiar de sector, te recomendaría ver este vídeo de nuestra última charla. Estará disponible solo durante 24 horas:  
-**[Cómo cambiar de sector y manejar objeciones](#)**
-
-### Nota 2
-
-En el caso de presentarse con un empleador o un gerente en una postulación espontánea, o a alguien desde LinkedIn, la dinámica es diferente, ya que tienes un límite de 300 caracteres para enviar un mensaje interesante. En nuestro curso de Empleabilidad te damos todos los ejemplos para que logres captar la atención de los empleadores con éxito.
-
+**[Haz clic aquí para descargar la plantilla de Carta de Presentación](https://drive.google.com/file/d/1nXOsmYRHItwSZKwgON1JloYxnTTBLhlS/view)** o este **[modelo de Carta de Presentación Online](https://drive.google.com/file/d/1hWzXzjdNe9RSYNB_ZiUb5T4AVzwWBvGS/view)**.
