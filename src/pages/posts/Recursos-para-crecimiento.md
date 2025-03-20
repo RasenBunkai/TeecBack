@@ -2,7 +2,7 @@
 layout: "../../layouts/PostLayout.astro"
 title: "Las mejores herramientas y recursos para impulsar tu desarrollo profesional"
 description: "Descubre herramientas y plataformas esenciales para mejorar tus habilidades, optimizar tu productividad y destacar en el mercado laboral."
-pubDate: 2025-03-18
+pubDate: 2025-03-19
 author: "Emiliano Salgado Mtz"
 tags: ["desarrollo profesional", "herramientas laborales", "aprendizaje en línea", "productividad", "marca personal", "habilidades laborales"]
 ---
