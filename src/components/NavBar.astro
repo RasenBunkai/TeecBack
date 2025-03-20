@@ -1,18 +1,24 @@
 ---
 import Forms from "@components/icons/Forms.astro";
 import Jobs from "@components/icons/Jobs.astro";
-import Home from "@components/icons/Home.astro";
+// import Home from "@components/icons/Home.astro";
 import Cv from "@components/icons/Cv.astro";
 import Comunity from "@components/icons/Comunity.astro";
 import Modal from "@components/Modal.astro";
+import Image from "astro/components/Image.astro";
 ---
 
 <nav
   class="top-0 sticky z-50 bg-indigo-950 mx-0 p-4 flex justify-between items-center h-16">
-  <!-- Logo -->
-  <a href="/" class="text-2xl font-bold text-white">
-    TeecBack</a
-  >
+  <a
+    href="/"
+    class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+    <Image src="/Tucan.png" alt="TB_Logo" class="w-9" width="32" height="32" />
+    <span
+      class="text-2xl font-bold text-white"
+      >TeecBack</span
+    >
+  </a>
 
   <!-- Hamburger menu button (visible on mobile) -->
   <button
