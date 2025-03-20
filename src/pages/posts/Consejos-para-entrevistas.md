@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/PostLayout.astro"
-title: "Consejos para Entrevistas de Trabajo"
+title: "5 Mejores consejos para una entrevistas de trabajo"
 description: "Aprende cómo prepararte y destacar en una entrevista de trabajo."
 pubDate: 2025-03-18
 author: "Emiliano Salgado Mtz"
