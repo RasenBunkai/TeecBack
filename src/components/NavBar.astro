@@ -5,29 +5,33 @@ import Briefcase from "@components/icons/Briefcase.astro";
 import Comunity from "@components/icons/Comunity.astro";
 import Modal from "@components/Modal.astro";
 import Image from "astro/components/Image.astro";
+
+const navItems = [
+  {href: "/form", icon: Forms, label: "Encuestas"},
+  {href: "/mejoraCV", icon: Briefcase, label: "Mejora tu CV"},
+  {href: "/recursos", icon: Jobs, label: "Recursos"},
+];
 ---
 
+<script src="/src/scripts/nav.js" defer></script>
 <nav
-  class="top-0 sticky z-50 bg-indigo-950 mx-0 p-4 flex justify-between items-center h-16">
-  <a
-    href="/"
-    class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+  class="top-0 sticky z-50 bg-indigo-950 p-4 flex justify-between items-center h-16">
+  <a href="/" class="flex items-center space-x-3">
     <Image src="/Tucan.png" alt="TB_Logo" class="w-9" width="32" height="32" />
     <span class="text-2xl font-bold text-white">TeecBack</span>
   </a>
 
-  <!-- Hamburger menu button (visible on mobile) -->
+  <!-- Hamburger Menu -->
   <button
     id="menu-button"
     class="text-white block md:hidden focus:outline-none"
     aria-expanded="false">
     <svg
-      xmlns="http://www.w3.org/2000/svg"
+      class="w-6 h-6"
       fill="none"
       viewBox="0 0 24 24"
-      stroke-width="2"
       stroke="currentColor"
-      class="w-6 h-6">
+      stroke-width="2">
       <path
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -35,34 +39,27 @@ import Image from "astro/components/Image.astro";
     </svg>
   </button>
 
-  <!-- Navigation menu -->
+  <!-- Menu Items -->
   <ul
     id="menu"
-    class="text-white flex flex-col md:flex-row md:space-x-6 absolute md:static top-16 left-0 w-full bg-indigo-950 md:w-auto transition-transform -translate-x-full md:translate-x-0 md:items-center">
-    <li class="flex justify-center">
-      <a href="/form" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"
-        ><Forms />Encuestas</a
-      >
-    </li>
-    <li class="flex justify-center">
-      <a href="/mejoraCV" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"
-        ><Briefcase /> Mejora tu CV</a
-      >
-    </li>
-    <li class="flex justify-center">
-      <a href="/recursos" class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"
-        ><Jobs />Recursos</a
-      >
-    </li>
+    class="text-white flex flex-col md:flex-row md:space-x-6 absolute md:static top-16 left-0 w-full bg-indigo-950 md:w-auto transition-transform -translate-x-full md:translate-x-0">
+    {
+      navItems.map(({href, icon: Icon, label}) => (
+        <li class="flex justify-center">
+          <a href={href} class="flex p-2 rounded-lg hover:bg-blue-950 gap-2">
+            <Icon /> {label}
+          </a>
+        </li>
+      ))
+    }
     <li class="flex justify-center">
       <button
         id="comunity-button"
-        class="flex p-2 rounded-lg hover:bg-blue-950 gap-2"
-        type="button"><Comunity />Comunidad de egresados</button
-      >
+        class="flex p-2 rounded-lg hover:bg-blue-950 gap-2">
+        <Comunity /> Comunidad de egresados
+      </button>
     </li>
   </ul>
 </nav>
-<Modal />
 
-<script src="/src/scripts/nav.js" defer></script>
+<Modal/>

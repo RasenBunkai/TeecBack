@@ -1,31 +1,35 @@
-document.addEventListener("DOMContentLoaded", () => {
+function setupNavbar() {
   const menuButton = document.getElementById("menu-button");
   const menu = document.getElementById("menu");
   const openButton = document.getElementById("comunity-button");
   const modal = document.querySelector('[aria-labelledby="modal-title"]');
-  const closeButton = document.querySelector(".close-modal");
+  const closeButton = modal?.querySelector(".close-modal");
 
-  // Mobile Menu Toggle
-  menuButton.addEventListener("click", () => {
-    menu.classList.toggle("-translate-x-full");
-    menu.classList.toggle("translate-x-0");
-    const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", !isExpanded);
-  });
+  if (!menuButton || !menu || !openButton || !modal) return;
 
-  // Modal Show/Hide Logic
-  const showModal = () => {
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
+  // Manejo de Menú Móvil
+  const toggleMenu = () => {
+    const isOpen = menu.classList.toggle("-translate-x-full");
+    menuButton.setAttribute("aria-expanded", String(!isOpen));
+    localStorage.setItem("menuOpen", !isOpen);
   };
-  const hideModal = () => {
-    modal.classList.add("hidden");
-    modal.classList.remove("flex");
-  };
+
+  menuButton.addEventListener("click", toggleMenu);
+  if (localStorage.getItem("menuOpen") === "true") toggleMenu();
+
+  // Modal
+  const showModal = () => modal.classList.replace("hidden", "flex");
+  const hideModal = () => modal.classList.replace("flex", "hidden");
 
   openButton.addEventListener("click", showModal);
-  if (closeButton) closeButton.addEventListener("click", hideModal);
-  modal.addEventListener("click", (event) => {
-    if (event.target === modal) hideModal();
+  closeButton?.addEventListener("click", hideModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) hideModal();
   });
-});
+}
+
+// Ejecutar al cargar la página
+document.addEventListener("DOMContentLoaded", setupNavbar);
+
+// Volver a asignar los eventos después de la navegación en Astro
+document.addEventListener("astro:after-swap", setupNavbar);

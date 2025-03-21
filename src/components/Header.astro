@@ -1,12 +1,20 @@
 ---
-import Image from 'astro/components/Image.astro';
-import ITCancun from '../img/ITCancun.jpg';
-import PCGuy from '../img/PCGuy.png';
-import NavBar from './NavBar.astro';
+import Image from "astro/components/Image.astro";
+import ITCancun from "../img/ITCancun.jpg";
+import PCGuy from "../img/PCGuy.png";
+import NavBar from "./NavBar.astro";
 ---
+
 <header class="relative bg-indigo-950 text-white h-screen">
   <!-- Imagen de fondo con blur -->
-   <Image src={ITCancun} width={390} height={390} alt="Logo de ITCancun" class="absolute inset-0 h-full w-full object-cover z-0 blur-md" loading='eager'/>
+  <Image
+    src={ITCancun}
+    width={390}
+    height={390}
+    alt="Logo de ITCancun"
+    class="absolute inset-0 h-full w-full object-cover z-0 blur-md"
+    loading="eager"
+  />
   <!-- <img src={ITCancun.src} alt="Logo de ITCancun" class="absolute inset-0 h-full w-full object-cover z-0 blur-md" loading="eager"/> -->
   <!-- Overlay oscuro -->
   <div class="absolute inset-0 bg-gray-900 bg-opacity-60 z-10"></div>
@@ -15,24 +23,35 @@ import NavBar from './NavBar.astro';
     <!-- Navegación -->
     <NavBar />
     <!-- Contenido principal alineado al fondo -->
-    <div class="container p-4 mx-auto flex flex-col md:flex-row items-center justify-between mt-auto mb-4">
+    <div
+      class="container p-4 mx-auto flex flex-col md:flex-row items-center justify-between mt-auto mb-4">
       <!-- Texto principal -->
       <div class="text-white md:w-1/2 space-y-6">
         <h1 class="text-5xl font-bold">TeecBack</h1>
         <h2 class="text-2xl">La retroalimentación que transforma</h2>
         <p class="text-lg">
-          ¿Estás por terminar tu carrera o ya la concluiste? Estamos aquí para escucharte, cuéntanos tu experiencia dentro del Tecnológico.
+          ¿Estás por terminar tu carrera o ya la concluiste? Estamos aquí para
+          escucharte, cuéntanos tu experiencia dentro del Tecnológico.
         </p>
         <div class="mt-4">
-          <a href="/form" class="px-6 py-3 bg-blue-800 hover:bg-indigo-950 text-white rounded-md">Iniciar encuesta</a>
+          <a
+            href="/form"
+            class="px-6 py-3 bg-blue-800 hover:bg-indigo-950 text-white rounded-md"
+            >Iniciar encuesta</a
+          >
         </div>
       </div>
       <!--ilustración -->
       <div class="mt-8 md:mt-0 md:w-1/2 flex justify-center">
         <!-- <img src={PCGuy.src} alt="Ilustración de retroalimentación" class="max-w-56 md:max-w-md"> -->
-        <Image src={PCGuy} width={390} alt="Ilustración de retroalimentación" class="max-w-56 md:max-w-md" loading='eager'/>
+        <Image
+          src={PCGuy}
+          width={390}
+          alt="Ilustración de retroalimentación"
+          class="max-w-56 md:max-w-md"
+          loading="eager"
+        />
       </div>
     </div>
   </div>
 </header>
-
