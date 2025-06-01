@@ -2,48 +2,50 @@
 import Image from "astro/components/Image.astro";
 ---
 
-<footer class="bg-indigo-950">
-    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <div class="sm:flex sm:items-center sm:justify-between">
-            <a
-                href="/"
-                class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
-            >
-                <Image
-                    src="/Tucan.png"
-                    alt="TB_Logo"
-                    class="w-9"
-                    width="32"
-                    height="32"
-                />
-                <span
-                    class="self-center text-2xl font-semibold whitespace-nowrap text-white"
-                    >TeecBack</span
-                >
-            </a>
-            <ul
-                class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0"
-            >
-                <li>
-                    <a
-                        href="/blog"
-                        class="hover:bg-blue-950 p-2 rounded me-4 md:me-6"
-                        >Blog</a
-                    >
-                </li>
-                <li>
-                    <a
-                        href="https://x.com/Rasen_bunkai"
-                        target="_blank"
-                        class="hover:bg-blue-950 p-2 rounded">Contacto</a
-                    >
-                </li>
-            </ul>
-        </div>
-        <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
+<footer
+  class="bg-gradient-to-b from-indigo-950 via-slate-900 to-slate-950 backdrop-blur-sm py-8">
+  <div class="w-full mx-auto p-4 md:py-8 container max-w-6xl">
+    <div
+      class="flex flex-col md:flex-row items-center justify-between gap-6 sm:flex sm:items-center sm:justify-between">
+      <a
+        href="/"
+        class="group flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+        <Image
+          src="/Tucan.png"
+          alt="TB_Logo"
+          class="group-hover:-translate-y-1 transition size-9"
+          width="32"
+          height="32"
+        />
         <span
-            class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
-            >© 2024-2025 <a href="/" class="hover:underline">Teecback</a> Todos los derechos reservados</span
+          class="self-center text-xl font-medium whitespace-nowrap text-white w-full max-w-xl sm:text-center sm:text-2xl md:text-4xl tracking-tighter text-pretty"
+          >TeecBack</span
         >
+      </a>
+      <ul
+        class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 gap-3">
+        <li class="group">
+          <a
+            href="/blog"
+            class="group-hover:text-white hover:bg-blue-950 p-2 rounded">Blog</a
+          >
+        </li>
+        <li class="group">
+          <a
+            href="https://x.com/Rasen_bunkai"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+            class="group-hover:text-white hover:bg-blue-950 p-2 rounded"
+            >Contacto</a
+          >
+        </li>
+      </ul>
     </div>
+    <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
+    <div
+      class="block text-sm text-gray-500 sm:text-center dark:text-gray-400 text-muted-foreground text-normal font-light tracking-tighter text-balance">
+      © {new Date().getFullYear()} Protecto TeecBack.
+    </div>
+  </div>
 </footer>
