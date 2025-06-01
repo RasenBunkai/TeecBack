@@ -24,27 +24,23 @@ import Image from "astro/components/Image.astro";
       </a>
       <ul
         class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 gap-3">
-        <li class="group">
-          <a
-            href="/blog"
-            class="group-hover:text-white hover:bg-blue-950 p-2 rounded">Blog</a
-          >
+        <li class="hover:-translate-y-1 transition">
+          <a href="/blog" class="hover:text-white">Blog</a>
         </li>
-        <li class="group">
+        <li class="hover:-translate-y-1 transition">
           <a
             href="https://x.com/Rasen_bunkai"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter"
-            class="group-hover:text-white hover:bg-blue-950 p-2 rounded"
-            >Contacto</a
+            class="hover:text-white">Contacto</a
           >
         </li>
       </ul>
     </div>
     <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
     <div
-      class="block text-sm text-gray-500 sm:text-center dark:text-gray-400 text-muted-foreground text-normal font-light tracking-tighter text-balance">
+      class="block text-sm text-gray-500 sm:text-center dark:text-gray-400 font-light tracking-tighter text-balance">
       © {new Date().getFullYear()} Protecto TeecBack.
     </div>
   </div>

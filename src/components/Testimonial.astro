@@ -1,33 +1,46 @@
-<!-- Testimonios -->
+---
+const testimonials = [
+  {
+    quote:
+      "Gracias a la comunidad de egresados conseguí mi primer empleo en tecnología.",
+    name: "Abraham V.",
+    position: "Ingeniero de Software",
+  },
+  {
+    quote: "Los recursos gratuitos me ayudaron a mejorar mis habilidades.",
+    name: "Rebecca M.",
+    position: "Marketing Digital",
+  },
+  {
+    quote: "La comunidad de egresados me ayudo a conseguir mi trabajo actual.",
+    name: "Pedro D.",
+    position: "Analista de Datos",
+  },
+];
+---
+
 <section class="mt-12">
-  <h2 class="text-3xl font-semibold text-gray-900 text-center">
+  <h3
+    class="text-3xl sm:text-2xl md:text-4xl text-center text-indigo-950 font-medium tracking-tighter text-pretty pointer-events-none">
     Lo que dicen nuestros egresados
-  </h2>
-  <div class="grid md:grid-cols-3 gap-6 mt-6">
-    <div class="bg-white shadow-lg rounded-lg p-6">
-      <p class="text-gray-700">
-        “Gracias a la comunidad de egresados conseguí mi primer empleo en
-        tecnología.”
-      </p>
-      <p class="text-gray-900 font-semibold mt-4">
-        — Abraham V., Ingeniero de Software
-      </p>
-    </div>
-    <div class="bg-white shadow-lg rounded-lg p-6">
-      <p class="text-gray-700">
-        “Los recursos gratuitos me ayudaron a mejorar mis habilidades.”
-      </p>
-      <p class="text-gray-900 font-semibold mt-4">
-        — Rebecca M., Marketing Digital
-      </p>
-    </div>
-    <div class="bg-white shadow-lg rounded-lg p-6">
-      <p class="text-gray-700">
-        “La comunidad de egresados me ayudo a conseguir mi trabajo actual.”
-      </p>
-      <p class="text-gray-900 font-semibold mt-4">
-        — Pedro D., Analista de Datos
-      </p>
+  </h3>
+  <div class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {
+        testimonials.map((testimonial) => (
+          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl hover:transform hover:scale-105 transition-transform duration-300">
+            <p class="text-gray-700 italic font-light pointer-events-none">
+              "{testimonial.quote}"
+            </p>
+            <h4 class="mt-4 text-indigo-950 font-semibold tracking-tighter text-pretty pointer-events-none">
+              {testimonial.name}
+            </h4>
+            <p class="text-gray-500 text-pretty pointer-events-none">
+              {testimonial.position}
+            </p>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
