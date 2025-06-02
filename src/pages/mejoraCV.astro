@@ -2,72 +2,88 @@
 import Layout from "src/layouts/Layout.astro";
 import NavBar from "@components/NavBar.astro";
 import CvForm from "@components/CvForm.jsx";
+import Check from "@components/icons/Check.astro";
+
+const template = [
+  {
+    title: "Plantilla Profesional",
+    text: "Ideal para áreas de tecnología y negocios.",
+    link: "https://rxresu.me/",
+    button: "Crea tu CV aquí",
+  },
+  {
+    title: "Plantilla Creativa",
+    text: "Perfecta para diseñadores y áreas creativas.",
+    link: "https://career.io/",
+    button: "Crea tu CV aquí",
+  },
+];
+const advices = [
+  {advice: "Utiliza un diseño limpio y profesional."},
+  {advice: "Enfócate en tus logros cuantificables y habilidades clave."},
+  {advice: "Asegúrate de adaptar tu CV al puesto que buscas."},
+  {advice: "Revisa la ortografía y gramática."},
+];
 ---
 
 <Layout title="TeecBack | Mejora tu Cv">
   <NavBar />
   <div class="min-h-screen p-6">
     <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
-      <h1 class="text-4xl font-semibold text-center mb-6">Mejora tu CV</h1>
+      <h2
+        class="text-indigo-950 text-2xl font-semibold mb-4 sm:text-2xl md:text-4xl text-center tracking-tighter text-pretty pointer-events-none">
+        Mejora tu CV
+      </h2>
 
       <!-- Intro Section -->
-      <p class="text-gray-600 text-center mb-8">
+      <p
+        class="text-gray-600 text-center mb-8 text-lg md:block leading-tight tracking-tighter text-pretty pointer-events-none">
         Encuentra herramientas, plantillas y consejos prácticos para destacar en
         el mercado laboral. ¡Crea un CV que deje huella!
       </p>
       <!-- Plantillas de CV -->
       <div class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Plantillas de CV</h2>
+        <h4
+          class="text-indigo-950 text-2xl font-semibold mb-4 tracking-tighter text-pretty pointer-events-none">
+          Plantillas de CV
+        </h4>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div
-            class="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-lg">
-            <h3 class="text-lg font-bold text-gray-700">
-              Plantilla Profesional
-            </h3>
-            <p class="text-sm text-gray-600">
-              Ideal para áreas de tecnología y negocios.
-            </p>
-            <a
-              href="https://app.resumepad.com/"
-              class="block mt-4 text-center bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-              target="_blank">Crea tu CV aquí</a
-            >
-          </div>
-          <div
-            class="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-lg">
-            <h3 class="text-lg font-bold text-gray-700">Plantilla Creativa</h3>
-            <p class="text-sm text-gray-600">
-              Perfecta para diseñadores y áreas creativas.
-            </p>
-            <a
-              href="https://career.io/"
-              class="block mt-4 text-center bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-              target="_blank">Crea tu CV aquí</a
-            >
-          </div>
+          {
+            template.map(({title, text, link, button}) => (
+              <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-lg hover:scale-105 transition-transform duration-300">
+                <h3 class="text-gray-700 text-xl font-bold leading-tight tracking-tighter text-pretty pointer-events-none">
+                  {title}
+                </h3>
+                <p class="text-sm text-gray-600 leading-tight tracking-tighter text-pretty pointer-events-none">
+                  {text}
+                </p>
+                <a
+                  href={link}
+                  class="block mt-4 text-center bg-indigo-900 text-white py-2 rounded hover:bg-indigo-950 transition-colors"
+                  target="_blank">
+                  {button}
+                </a>
+              </div>
+            ))
+          }
         </div>
       </div>
 
       <!-- Consejos para mejorar el CV -->
       <div class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4">Consejos para mejorar tu CV</h2>
+        <h4
+          class="text-indigo-950 text-2xl font-semibold mb-4 tracking-tighter text-pretty pointer-events-none">
+          Consejos para mejorar tu CV
+        </h4>
         <ul class="text-gray-600">
-          <li class="mb-2">
-            <span class="text-green-700">✔</span>
-            Utiliza un diseño limpio y profesional.
-          </li>
-          <li class="mb-2">
-            <span class="text-green-700">✔</span>
-            Enfócate en tus logros cuantificables y habilidades clave.
-          </li>
-          <li class="mb-2">
-            <span class="text-green-700">✔</span>
-            Asegúrate de adaptar tu CV al puesto que buscas.
-          </li>
-          <li class="mb-2">
-            <span class="text-green-700">✔</span>
-            Revisa la ortografía y gramática.
-          </li>
+          {
+            advices.map(({advice}) => (
+              <li class="mb-2 leading-tight tracking-tighter text-pretty hover:font-medium hover:translate-x-1 transition-all">
+                <Check className="size-6 text-green-700 inline" />
+                {advice}
+              </li>
+            ))
+          }
         </ul>
       </div>
       <CvForm client:load />

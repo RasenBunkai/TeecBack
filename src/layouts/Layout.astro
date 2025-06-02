@@ -5,6 +5,7 @@ interface Props {
 const {title} = Astro.props;
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import {ClientRouter} from "astro:transitions";
 ---
 
 <!doctype html>
@@ -16,10 +17,10 @@ import "../styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/Tucan.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ClientRouter />
   </head>
   <body class="bg-gradient-to-b from-slate-200 via-blue-100 to-gray-300">
     <slot />
     <Footer />
   </body>
 </html>
-

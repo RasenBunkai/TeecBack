@@ -166,13 +166,15 @@ const CvForm = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <h3 className="text-2xl font-semibold mb-4">Crea tu propio CV</h3>
+      <h4 className="text-indigo-950 text-2xl font-semibold mb-4 tracking-tighter text-pretty pointer-events-none">
+        Crea tu propio CV
+      </h4>
       <form className="space-y-6">
         {/* Información Personal */}
         <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          <h5 className="text-slate-950 text-xl font-semibold mb-4 tracking-tighter text-pretty pointer-events-none">
             Información Personal
-          </h2>
+          </h5>
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label
@@ -223,8 +225,9 @@ const CvForm = () => {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700"
-              For="Direction">
+              <label
+                className="block text-sm font-medium text-gray-700"
+                For="Direction">
                 Dirección
               </label>
               <input
@@ -242,9 +245,9 @@ const CvForm = () => {
 
         {/* Educación */}
         <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          <h5 className="text-slate-950 text-xl font-semibold mb-4 tracking-tighter text-pretty pointer-events-none">
             Educación
-          </h2>
+          </h5>
           <div id="educationEntries" className="space-y-4">
             {education.map((edu, index) => (
               <div key={index} className="education-entry">
@@ -291,9 +294,9 @@ const CvForm = () => {
 
         {/* Experiencia Profesional */}
         <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          <h5 className="text-slate-950 text-xl font-semibold mb-4 tracking-tighter text-pretty pointer-events-none">
             Experiencia Profesional
-          </h2>
+          </h5>
           <div id="experienceEntries" className="space-y-4">
             {experience.map((exp, index) => (
               <div key={index} className="experience-entry">
@@ -345,9 +348,9 @@ const CvForm = () => {
 
         {/* Habilidades Técnicas */}
         <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">
+          <h5 className="text-slate-950 text-xl font-semibold mb-4 tracking-tighter text-pretty pointer-events-none">
             Habilidades Técnicas
-          </h2>
+          </h5>
           <div id="skillEntries" className="grid grid-cols-3 gap-4">
             {skills.map((skill, index) => (
               <input
@@ -370,9 +373,9 @@ const CvForm = () => {
 
         {/* Publicaciones y Premios */}
         <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-2">
-            Publicaciones y Premios
-          </h2>
+          <h5 className="text-slate-950 text-xl font-semibold mb-4 tracking-tighter text-pretty pointer-events-none">
+            Publicaciones
+          </h5>
           <textarea
             id="publications"
             placeholder="Lista de publicaciones (formato APA)"
@@ -380,6 +383,9 @@ const CvForm = () => {
             onChange={(e) => setPublications(e.target.value)}
             className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300 h-32"
           />
+          <h5 className="text-slate-950 text-xl font-semibold mt-4 tracking-tighter text-pretty pointer-events-none">
+            Premios
+          </h5>
           <textarea
             id="awards"
             placeholder="Premios y reconocimientos"
@@ -392,7 +398,7 @@ const CvForm = () => {
         <button
           type="button"
           onClick={generateHarvardCV}
-          className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">
+          className="w-full text-lg mt-6 bg-indigo-900 text-white font-semibold py-2 px-4 rounded hover:bg-indigo-950 transition-colors cursor-pointer my-4">
           Generar CV en formato Harvard
         </button>
       </form>

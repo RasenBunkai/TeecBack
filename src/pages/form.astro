@@ -2,12 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 import NavBar from "../components/NavBar.astro";
 ---
+
 <Layout title="TeecBack | Formulario">
   <NavBar />
   <div class="min-h-screen p-6">
     <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
       <form action="https://formspree.io/f/mdkonval" method="POST">
-        <h2 class="text-2xl font-semibold mb-4">Sobre la carrera y materias</h2>
+        <h2
+          class="text-indigo-950 text-2xl font-semibold mb-4 sm:text-2xl md:text-4xl tracking-tighter text-pretty pointer-events-none">
+          Sobre la carrera y materias
+        </h2>
         <div class="mb-4">
           <label for="carrera-cursada" class="block text-gray-700"
             >¿Qué carrera estudiaste?</label
@@ -63,9 +67,10 @@ import NavBar from "../components/NavBar.astro";
             class="mt-1 p-2 border border-gray-300 rounded w-full"></textarea>
         </div>
 
-        <h2 class="text-2xl font-semibold mb-4">
+        <h4
+          class="text-indigo-950 text-2xl font-semibold mb-4 tracking-tighter text-pretty pointer-events-none">
           Sobre la experiencia académica
-        </h2>
+        </h4>
         <div class="mb-4">
           <label for="experiencia-profesores" class="block text-gray-700"
             >¿Cómo fue tu experiencia general con los profesores?</label
@@ -114,9 +119,10 @@ import NavBar from "../components/NavBar.astro";
             class="mt-1 p-2 border border-gray-300 rounded w-full"></textarea>
         </div>
 
-        <h2 class="text-2xl font-semibold mb-4">
+        <h4
+          class="text-indigo-950 text-2xl font-semibold mb-4 tracking-tighter text-pretty pointer-events-none">
           Sobre la retroalimentación general
-        </h2>
+        </h4>
         <div class="mb-4">
           <label for="actividades-adicionales" class="block text-gray-700"
             >¿Qué actividades o servicios adicionales te habrían gustado tener
@@ -168,7 +174,10 @@ import NavBar from "../components/NavBar.astro";
             class="mt-1 p-2 border border-gray-300 rounded w-full"></textarea>
         </div>
 
-        <h2 class="text-2xl font-semibold mb-4">Sobre la universidad</h2>
+        <h4
+          class="text-indigo-950 text-2xl font-semibold mb-4 tracking-tighter text-pretty pointer-events-none">
+          Sobre la universidad
+        </h4>
         <div class="mb-4">
           <label for="satisfaccion-recursos" class="block text-gray-700"
             >¿Qué tan satisfecho/a estuviste con los recursos académicos
@@ -206,7 +215,7 @@ import NavBar from "../components/NavBar.astro";
         <div class="flex items-center justify-center">
           <button
             type="submit"
-            class="w-full mt-6 bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700"
+            class="w-full text-lg mt-6 bg-indigo-900 text-white font-bold py-2 px-4 rounded hover:bg-indigo-950 transition-colors cursor-pointer my-4"
             >Enviar</button
           >
         </div>
