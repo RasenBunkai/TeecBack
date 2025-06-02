@@ -7,138 +7,169 @@ import NavBar from "@components/NavBar.astro";
   <NavBar />
   <div class="min-h-screen p-6">
     <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
-      <h1 class="text-4xl font-semibold text-center text-gray-900">
+      <h2
+        class="text-indigo-950 text-2xl font-semibold mb-4 sm:text-2xl md:text-4xl text-center tracking-tighter text-pretty pointer-events-none">
         Recursos para Egresados
-      </h1>
-      <p class="text-center text-gray-600 mt-4 max-w-2xl mx-auto">
-        Encuentra herramientas y guías que te ayudarán a mejorar tu
-        empleabilidad y desarrollo profesional.
+      </h2>
+      <p
+        class="text-gray-600 text-center mb-8 text-lg md:block leading-tight tracking-tighter text-pretty pointer-events-none">
+        Encuentra herramientas y guías que te ayudarán a mejorar tuempleabilidad
+        y desarrollo profesional.
       </p>
       <!-- Grid principal -->
       <div
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-8 gap-4 mt-8">
         <!-- Plantillas de CV -->
         <div
-          class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-5 row-span-3">
-          <h2 class="text-xl font-semibold text-gray-800">Plantillas de CV</h2>
-          <p class="text-gray-600 mt-2">
+          class="bg-indigo-100 flex flex-col shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-5 row-span-3 hover:scale-105 transition-transform duration-300">
+          <h4
+            class="text-xl font-semibold text-indigo-950 mb-4 tracking-tighter text-pretty pointer-events-none">
+            Plantillas de CV
+          </h4>
+          <p
+            class="text-gray-600 mb-4 text-md md:block leading-tight tracking-tighter text-pretty pointer-events-none">
             Descarga formatos de CV profesionales listos para editar y mejorar
             tu presentación laboral.
           </p>
           <a
             href="https://app.resumepad.com/"
             target="_blank"
-            class="block mt-4 text-blue-600 font-semibold hover:underline">
+            class="block mt-auto text-indigo-700 font-semibold hover:text-indigo-950 text-lg md:block leading-tight mb-2 tracking-tighter text-pretty hover:translate-x-2 transition-all duration-300">
             Ver plantillas →
           </a>
         </div>
 
         <!-- Guía de entrevistas -->
         <div
-          class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-3 row-span-3">
-          <h2 class="text-xl font-semibold text-gray-800">
+          class="bg-indigo-100 flex flex-col shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-3 row-span-3 hover:scale-105 transition-transform duration-300">
+          <h4
+            class="text-xl font-semibold text-indigo-950 mb-4 tracking-tighter text-pretty pointer-events-none">
             Guía de entrevistas
-          </h2>
-          <p class="text-gray-600 mt-2">
+          </h4>
+          <p
+            class="text-gray-600 mb-4 text-md md:block leading-tight tracking-tighter text-pretty pointer-events-none">
             Aprende cómo responder preguntas clave y destacar en entrevistas de
             trabajo.
           </p>
           <a
             href="../posts/Guia-preguntas-para-entrevista"
             target="_blank"
-            class="block mt-4 text-blue-600 font-semibold hover:underline">
+            class="block mt-auto text-indigo-700 font-semibold hover:text-indigo-950 text-lg md:block leading-tight mb-2 tracking-tighter text-pretty hover:translate-x-2 transition-all duration-300">
             Leer guía →
           </a>
         </div>
 
-        <!-- Cursos y certificaciones -->
+        <!-- Blog -->
         <div
-          class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-2 row-span-3">
-          <h2 class="text-xl font-semibold text-gray-800">Nuestro blog</h2>
-          <p class="text-gray-600 mt-2">
+          class="bg-indigo-100 flex flex-col shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-2 row-span-3 hover:scale-105 transition-transform duration-300">
+          <h4
+            class="text-xl font-semibold text-indigo-950 mb-4 tracking-tighter text-pretty pointer-events-none">
+            Nuestro blog
+          </h4>
+          <p
+            class="text-gray-600 mb-4 text-md md:block leading-tight tracking-tighter text-pretty pointer-events-none">
             Descubre artículos y recursos útiles en nuestro blog.
           </p>
           <a
             href="/blog"
-            class="block mt-4 text-blue-600 font-semibold hover:underline">
+            class="block mt-auto text-indigo-700 font-semibold hover:text-indigo-950 text-lg md:block leading-tight mb-2 tracking-tighter text-pretty hover:translate-x-2 transition-all duration-300">
             Explorar recursos →
           </a>
         </div>
 
         <!-- Red de egresados -->
         <div
-          class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3 row-span-3">
-          <h2 class="text-xl font-semibold text-gray-800">Red de Egresados</h2>
-          <p class="text-gray-600 mt-2">
+          class="bg-indigo-100 flex flex-col shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3 row-span-3 hover:scale-105 transition-transform duration-300">
+          <h4
+            class="text-xl font-semibold text-indigo-950 mb-4 tracking-tighter text-pretty pointer-events-none">
+            Red de Egresados
+          </h4>
+          <p
+            class="text-gray-600 mb-4 text-md md:block leading-tight tracking-tighter text-pretty pointer-events-none">
             Conéctate con otros egresados para intercambiar experiencias y
             oportunidades laborales.
           </p>
           <a
             href="https://chat.whatsapp.com/CfkWnzzusD3E4Ug92fOsCr"
             target="_blank"
-            class="block mt-4 text-blue-600 font-semibold hover:underline">
+            class="block mt-auto text-indigo-700 font-semibold hover:text-indigo-950 text-lg md:block leading-tight mb-2 tracking-tighter text-pretty hover:translate-x-2 transition-all duration-300">
             Únete a la red →
           </a>
         </div>
 
         <!-- Eventos y webinars -->
         <div
-          class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3 row-span-4">
-          <h2 class="text-xl font-semibold text-gray-800">
+          class="bg-indigo-100 flex flex-col shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3 row-span-4 hover:scale-105 transition-transform duration-300">
+          <h4
+            class="text-xl font-semibold text-indigo-950 mb-4 tracking-tighter text-pretty pointer-events-none">
             Eventos y Webinars
-          </h2>
-          <p class="text-gray-600 mt-2">
+          </h4>
+          <p
+            class="text-gray-600 mb-4 text-md md:block leading-tight tracking-tighter text-pretty pointer-events-none">
             Mantente informado sobre conferencias, talleres y charlas en línea
-            sobre empleabilidad.
+            sobre empleabilidad. Participa en eventos en vivo, webinars
+            interactivos y talleres especializados donde podrás aprender de
+            expertos, hacer networking con profesionales de tu área y mantenerte
+            actualizado sobre las tendencias del mercado laboral.
           </p>
           <a
             href="https://business.linkedin.com/es-mx/talent-solutions/recruiting-best-practices-webinars"
             target="_blank"
-            class="block mt-4 text-blue-600 font-semibold hover:underline">
+            class="block mt-auto text-indigo-700 font-semibold hover:text-indigo-950 text-lg md:block leading-tight mb-2 tracking-tighter text-pretty hover:translate-x-2 transition-all duration-300">
             Ver eventos →
           </a>
         </div>
 
         <!-- Consejos para LinkedIn -->
         <div
-          class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-2 row-span-3">
-          <h2 class="text-xl font-semibold text-gray-800">
+          class="bg-indigo-100 flex flex-col shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-2 row-span-3 hover:scale-105 transition-transform duration-300">
+          <h4
+            class="text-xl font-semibold text-indigo-950 mb-4 tracking-tighter text-pretty pointer-events-none">
             Consejos para optimizar tu perfil de LinkedIn
-          </h2>
-          <p class="text-gray-600 mt-2">
+          </h4>
+          <p
+            class="text-gray-600 mb-4 text-md md:block leading-tight tracking-tighter text-pretty pointer-events-none">
             Aprende a optimizar tu perfil de LinkedIn para atraer mejores
             oportunidades de empleo.
           </p>
           <a
             href="../posts/Como-optimizar-perfil-linkedin"
             target="_blank"
-            class="block mt-4 text-blue-600 font-semibold hover:underline">
+            class="block mt-auto text-indigo-700 font-semibold hover:text-indigo-950 text-lg md:block leading-tight mb-2 tracking-tighter text-pretty hover:translate-x-2 transition-all duration-300">
             Ver consejos →
           </a>
         </div>
         <!-- Freelance y Trabajo Remoto -->
         <div
-          class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-3 row-span-3">
-          <h2 class="text-xl font-semibold text-gray-800">
+          class="bg-indigo-100 flex flex-col shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-3 row-span-3 hover:scale-105 transition-transform duration-300">
+          <h4
+            class="text-xl font-semibold text-indigo-950 mb-4 tracking-tighter text-pretty pointer-events-none">
             Freelance y Trabajo Remoto
-          </h2>
-          <p class="text-gray-600 mt-2">
+          </h4>
+          <p
+            class="text-gray-600 mb-4 text-md md:block leading-tight tracking-tighter text-pretty pointer-events-none">
             Encuentra plataformas y consejos para trabajar como freelancer o en
-            remoto.
+            remoto. Descubre cómo iniciar tu carrera como freelancer, consejos
+            para gestionar tu tiempo y proyectos, y plataformas recomendadas
+            para encontrar oportunidades de trabajo remoto en distintas áreas
+            profesionales.
           </p>
           <a
             href="../posts/Encontrar-oportunidades-empleo-remoto"
             target="_blank"
-            class="block mt-4 text-blue-600 font-semibold hover:underline">
+            class="block mt-auto text-indigo-700 font-semibold hover:text-indigo-950 text-lg md:block leading-tight mb-2 tracking-tighter text-pretty hover:translate-x-2 transition-all duration-300">
             Ver recursos →
           </a>
         </div>
+        <!-- carta de presentacion -->
         <div
-          class="bg-indigo-100 shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3 row-span-2">
-          <h2 class="text-xl font-semibold text-gray-800">
+          class="bg-indigo-100 flex flex-col shadow-lg rounded-lg p-6 col-span-1 sm:col-span-2 md:col-span-2 lg:col-span-3 row-span-2 hover:scale-105 transition-transform duration-300">
+          <h4
+            class="text-xl font-semibold text-indigo-950 mb-4 tracking-tighter text-pretty pointer-events-none">
             Redacta una carta de presentación
-          </h2>
-          <p class="text-gray-600 mt-2">
+          </h4>
+          <p
+            class="text-gray-600 mb-4 text-md md:block leading-tight tracking-tighter text-pretty pointer-events-none">
             Descubre herramientas y plataformas esenciales para mejorar tus
             habilidades, optimizar tu productividad y destacar en el mercado
             laboral.
@@ -146,7 +177,7 @@ import NavBar from "@components/NavBar.astro";
           <a
             href="../posts/Redactar-carta-presentacion"
             target="_blank"
-            class="block mt-4 text-blue-600 font-semibold hover:underline">
+            class="block mt-auto text-indigo-700 font-semibold hover:text-indigo-950 text-lg md:block leading-tight mb-2 tracking-tighter text-pretty hover:translate-x-2 transition-all duration-300">
             Ir al blog →
           </a>
         </div>
