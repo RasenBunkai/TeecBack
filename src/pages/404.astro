@@ -1,9 +1,12 @@
 ---
 import Layout from "src/layouts/Layout.astro";
+import NavBar from "@components/NavBar.astro";
 import Image from "astro/components/Image.astro";
 ---
+
 <Layout title="Not Found">
-  <section class="bg-indigo-500">
+  <NavBar />
+  <section class="bg-slate-900">
     <div class="py-8 px-4 mx-auto w-full lg:py-16 lg:px-6">
       <div class="mx-auto max-w-screen-sm text-center">
         <Image
@@ -13,20 +16,26 @@ import Image from "astro/components/Image.astro";
           width={1024}
           height={1024}
           loading="eager"
+          draggable="false"
         />
-        <p
-          class="mb-4 text-3xl tracking-tight font-bold md:text-4xl text-white">
+        <h3
+          class="text-white text-5xl font-semibold mb-4 text-center tracking-tighter text-pretty pointer-events-none">
           Whoops! Esa página no existe.
-        </p>
-        <p class="mb-4 text-lg tracking-tight font-light text-white">
+        </h3>
+        <p
+          class="text-gray-300 mb-8 text-lg md:block leading-tight tracking-tighter text-pretty pointer-events-none">
           Lo sentimos, no podemos encontrar esa página. Encontrarás mucho por
           explorar en la página de inicio.
         </p>
         <a
           href="/"
-          class="inline-flex text-blue-600 bg-white hover:bg-blue-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center my-4"
-          >Volver al inicio</a
-        >
+          aria-label="Ir al inicio"
+          class="inline-block px-6 py-3 bg-white hover:bg-indigo-100 text-slate-900 font-semibold rounded-md transition-colors border-2 border-white relative animate-pulse-ping">
+          Volver al inicio
+          <span
+            class="absolute inset-0 rounded-md border-2 border-white animate-ping pointer-events-none"
+          ></span>
+        </a>
       </div>
     </div>
   </section>
