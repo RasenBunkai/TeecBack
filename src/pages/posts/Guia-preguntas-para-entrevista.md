@@ -4,7 +4,15 @@ title: "Guía de preguntas para una entrevista (con respuestas)"
 description: "En este artículo, mencionamos 10 preguntas de entrevista comunes con ejemplos de respuestas."
 pubDate: 2025-03-20
 author: "Emiliano Salgado Mtz"
-tags: ["entrevista", "preguntas de entrevista", "respuestas de entrevista", "preparación para entrevistas", "consejos de carrera", "empleo", "recursos humanos", "desarrollo profesional"]
+tags:
+  - entrevista
+  - preguntas de entrevista
+  - respuestas de entrevista
+  - preparación para entrevistas
+  - consejos de carrera
+  - empleo
+  - recursos humanos
+  - desarrollo profesional
 ---
 Si te han seleccionado para continuar en el proceso de selección para un nuevo empleo, es fundamental que comiences a prepararte con anticipación para el encuentro con el gerente de contratación. Tener una guía de preguntas para una entrevista es de gran utilidad, ya que te permite practicar las posibles respuestas que servirán para destacar tu perfil profesional. En este artículo, mencionamos 10 preguntas de entrevista comunes con ejemplos de respuestas.
 

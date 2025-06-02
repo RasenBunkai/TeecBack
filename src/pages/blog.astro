@@ -32,7 +32,7 @@ const resolvedPosts = await Promise.all(
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 my-8 px-4">
         {
           resolvedPosts.map(({key, title, description, pubDate}) => (
-            <li class="flex flex-col bg-white rounded-2xl border border-indigo-200 shadow-md hover:shadow-xl transition-shadow duration-300 p-6">
+            <li class="flex flex-col bg-slate-50 rounded-2xl border border-indigo-200 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 p-6">
               <div class="flex-1">
                 <h4 class="text-indigo-950 text-2xl font-semibold mb-4 tracking-tighter text-pretty pointer-events-none">
                   {title}

@@ -1,10 +1,15 @@
 ---
 layout: "../../layouts/PostLayout.astro"
+
 title: "5 Mejores consejos para una entrevistas de trabajo"
 description: "Aprende cómo prepararte y destacar en una entrevista de trabajo."
 pubDate: 2025-03-18
 author: "Emiliano Salgado Mtz"
-tags: ["entrevista", "empleo", "consejos", "carrera", "reclutamiento"]
+tags:
+  - entrevista
+  - empleo
+  - consejos
+  - carrera
 ---
 Cuando buscas empleo, puede ser tentador dejar de lado las ofertas laborales que no parecen dar muchos resultados. De todos modos, cada día se crean no cientos, sino miles, de ofertas de empleo y se envían cientos de currículos.
 Si no te llaman o no recibes respuesta a una solicitud, puedes sentirte muy desalentado. Sin embargo, esta mentalidad es contraproducente.

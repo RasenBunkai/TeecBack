@@ -4,8 +4,14 @@ title: "Cómo hacer una carta de presentación"
 description: "Descubre herramientas y plataformas esenciales para mejorar tus habilidades, optimizar tu productividad y destacar en el mercado laboral."
 pubDate: 2025-03-19
 author: "Emiliano Salgado Mtz"
-tags: ["carta de presentación", "empleo", "currículum", "consejos laborales", "ejemplo de carta", "plantilla de carta"]
----
+tags:
+  - carta de presentación
+  - empleo
+  - currículum
+  - consejos laborales
+  - ejemplo de carta
+  - plantilla de carta
+  ---
 La carta de presentación, también llamada carta de motivación, va de la mano del currículum vitae en una solicitud de trabajo.
 Para algunos reclutadores, la carta de presentación es incluso más importante que el currículum, ya que el contenido de ella es un reflejo de lo que puedes aportar a la empresa y de cómo encajarías en ella.
 
