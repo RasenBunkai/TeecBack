@@ -1,27 +1,56 @@
 ---
-import Layout from "src/layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro";
 import NavBar from "@components/NavBar.astro";
+
 const allPosts = import.meta.glob("../pages/posts/*.md");
+const resolvedPosts = await Promise.all(
+  Object.entries(allPosts).map(async ([key, post]) => {
+    const mod = await post();
+    return {
+      key,
+      title: (mod as any).frontmatter.title,
+      description: (mod as any).frontmatter.description,
+      pubDate: (mod as any).frontmatter.pubDate.split("T")[0],
+    };
+  })
+);
 ---
 
-<Layout title="TeecBack | Blog">
+<Layout title="Blog">
   <NavBar />
-  <div class="p-6">
-    <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
-      <h1 class="text-4xl font-semibold text-center text-gray-900">Blog</h1>
-      <p class="text-center text-gray-600 mt-4 max-w-2xl mx-auto">
+  <div class="min-h-screen p-6">
+    <div class="max-w-7xl mx-auto bg-white shadow-md rounded-lg p-6">
+      <h2
+        class="text-indigo-950 text-2xl font-semibold mb-4 sm:text-2xl md:text-4xl text-center tracking-tighter text-pretty pointer-events-none">
+        Blog
+      </h2>
+      <p
+        class="text-gray-600 text-center mb-8 text-lg md:block leading-tight tracking-tighter text-pretty pointer-events-none">
         Descubre artículos útiles en nuestro blog.
       </p>
       <ul
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 my-6 px-4">
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 my-8 px-4">
         {
-          Object.entries(allPosts).map(([key, post]) => (
-            <li class="relative bg-indigo-100 border border-indigo-300 shadow-md rounded-xl p-4 transition-transform transform hover:scale-105 hover:shadow-lg">
-              <a
-                href={key.replace("../pages", "").replace(".md", "")}
-                class="block  text-indigo-500 hover:text-indigo-900 text-lg font-semibold text-center">
-                {post().then((mod) => (mod as any).frontmatter.title)}
-              </a>
+          resolvedPosts.map(({key, title, description, pubDate}) => (
+            <li class="flex flex-col bg-white rounded-2xl border border-indigo-200 shadow-md hover:shadow-xl transition-shadow duration-300 p-6">
+              <div class="flex-1">
+                <h4 class="text-indigo-950 text-2xl font-semibold mb-4 tracking-tighter text-pretty pointer-events-none">
+                  {title}
+                </h4>
+                <p class="text-gray-700 text-base leading-relaxed mb-4 tracking-tighter text-pretty pointer-events-none">
+                  {description}
+                </p>
+              </div>
+              <div class="mt-6 flex flex-col gap-2">
+                <a
+                  href={key.replace("../pages", "").replace(".md", "")}
+                  class="inline-flex items-center justify-center gap-2 bg-indigo-900 text-white px-4 py-2 rounded-md font-medium text-sm hover:bg-indigo-950 transition-colors duration-300">
+                  Ir al blog
+                </a>
+                <span class="text-sm text-gray-500 text-center leading-relaxed mb-4 tracking-tighter text-pretty pointer-events-none">
+                  Publicado el {pubDate}
+                </span>
+              </div>
             </li>
           ))
         }
