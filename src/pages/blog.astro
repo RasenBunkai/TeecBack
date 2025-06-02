@@ -33,7 +33,7 @@ const resolvedPosts = await Promise.all(
       </p>
 
       <ul
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 my-8 px-4">
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-8 px-4">
         {
           resolvedPosts.map(({key, title, description, pubDate, tags}) => (
             <li class="flex flex-col bg-slate-50 rounded-2xl border border-indigo-200 shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 p-6">
@@ -66,7 +66,8 @@ const resolvedPosts = await Promise.all(
               <div class="mt-6 flex flex-col gap-2">
                 <a
                   href={key.replace("../pages", "").replace(".md", "")}
-                  class="inline-flex items-center justify-center gap-2 bg-indigo-900 text-white px-4 py-2 rounded-md font-medium text-sm hover:bg-indigo-950 transition-colors duration-300">
+                  class="inline-flex items-center justify-center gap-2 bg-indigo-900 text-white px-4 py-2 rounded-md font-medium text-sm hover:bg-indigo-950 transition-colors duration-300"
+                  target="_blank">
                   Ir al blog
                 </a>
                 <span class="text-sm text-gray-500 text-center leading-relaxed mb-4 tracking-tighter text-pretty pointer-events-none">
