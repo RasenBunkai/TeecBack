@@ -1,10 +1,11 @@
 ---
+import Image from "astro/components/Image.astro";
 import Forms from "@components/icons/Forms.astro";
 import Jobs from "@components/icons/Jobs.astro";
 import Briefcase from "@components/icons/Briefcase.astro";
 import Comunity from "@components/icons/Comunity.astro";
 import Modal from "@components/Modal.astro";
-import Image from "astro/components/Image.astro";
+import Bars from "./icons/Bars.astro";
 
 const navItems = [
   {href: "/form", icon: Forms, label: "Encuestas"},
@@ -13,12 +14,22 @@ const navItems = [
 ];
 ---
 
-<script src="/src/scripts/nav.js" defer></script>
+<script src="/src/scripts/nav.ts" defer></script>
 <nav
   class="top-0 sticky z-50 bg-indigo-950 p-4 flex justify-between items-center h-16">
-  <a href="/" class="flex items-center space-x-3">
-    <Image src="/Tucan.png" alt="TB_Logo" class="w-9" width="32" height="32" />
-    <span class="text-2xl font-bold text-white">TeecBack</span>
+  <a href="/" class="group flex items-center space-x-3">
+    <Image
+      src="/Tucan.png"
+      alt="TB_Logo"
+      class="size-9 transition-transform group-hover:translate-x-3"
+      width="32"
+      height="32"
+      loading="eager"
+    />
+    <span
+      class="transition-transform text-2xl font-semibold text-white group-hover:translate-x-3"
+      >TeecBack</span
+    >
   </a>
 
   <!-- Hamburger Menu -->
@@ -26,17 +37,9 @@ const navItems = [
     id="menu-button"
     class="text-white block md:hidden focus:outline-none"
     aria-expanded="false">
-    <svg
-      class="w-6 h-6"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      stroke-width="2">
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M4 6h16M4 12h16m-7 6h7"></path>
-    </svg>
+    <Bars
+      className="size-6 cursor-pointer hover:scale-125 transition-transform duration-300"
+    />
   </button>
 
   <!-- Menu Items -->
@@ -46,7 +49,9 @@ const navItems = [
     {
       navItems.map(({href, icon: Icon, label}) => (
         <li class="flex justify-center">
-          <a href={href} class="flex p-2 rounded-lg hover:bg-blue-950 gap-2">
+          <a
+            href={href}
+            class="flex p-2 gap-2.5 hover:-translate-y-1 transition">
             <Icon /> {label}
           </a>
         </li>
@@ -55,11 +60,10 @@ const navItems = [
     <li class="flex justify-center">
       <button
         id="comunity-button"
-        class="flex p-2 rounded-lg hover:bg-blue-950 gap-2">
+        class="flex p-2 gap-2 hover:-translate-y-1 transition cursor-pointer">
         <Comunity /> Comunidad de egresados
       </button>
     </li>
   </ul>
+  <Modal />
 </nav>
-
-<Modal/>
