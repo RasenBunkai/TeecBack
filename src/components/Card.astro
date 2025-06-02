@@ -1,31 +1,35 @@
 ---
-import { Image } from "astro:assets";
-
-const { title, body, link, imgSrc, btntext } = Astro.props;
+import {Image} from "astro:assets";
+const {title, body, link, imgSrc, btntext} = Astro.props;
 ---
 
-<div class="flex flex-col overflow-hidden rounded bg-white shadow">
-    <div class="h-52">
-        <Image
-            src={imgSrc}
-            alt={title}
-            class="h-full w-full object-cover object-center"
-            width=600
-            height=800
-            loading="lazy"
-        />
-    </div>
-    <div class="flex-1 space-y-3 p-5">
-        <h2 class="text-2xl font-semibold leading-tight text-slate-950 mb-2">
-            {title}
-        </h2>
-        <p class="text-gray-700 text-lg md:block">{body}</p>
-    </div>
-    <div class="flex space-x-2 p-5">
-        <a
-            href={link}
-            class="block w-full bg-blue-500 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded mt-4 text-center"
-            >{btntext}</a
-        >
-    </div>
+<div class="group flex flex-col overflow-hidden rounded bg-white shadow">
+  <div class="h-52">
+    <Image
+      src={imgSrc}
+      alt={title}
+      class="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+      width="600"
+      height="800"
+      loading="lazy"
+    />
+  </div>
+  <div class="flex-1 space-y-3 p-5">
+    <h4
+      class="text-2xl font-semibold leading-tight text-indigo-950 mb-2 text-center tracking-tighter text-pretty pointer-events-none">
+      {title}
+    </h4>
+    <p
+      class="text-slate-950 text-lg md:block leading-tight mb-2 text-justify tracking-tighter text-pretty pointer-events-none">
+      {body}
+    </p>
+  </div>
+  <div class="flex space-x-2 p-5">
+    <a
+      href={link}
+      aria-label={`Ir a ${title}`}
+      class="hover:-translate-y-1 transition block w-full bg-indigo-800 hover:bg-indigo-950 text-white font-bold py-2 px-4 rounded mt-4 text-center"
+      >{btntext}</a
+    >
+  </div>
 </div>
