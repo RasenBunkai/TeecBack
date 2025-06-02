@@ -1,8 +1,8 @@
 ---
 layout: "../../layouts/PostLayout.astro"
 
-title: "Cómo optimizar tu perfil de LinkedIn para atraer oportunidades profesionales"
-description: "Aprende a destacar en LinkedIn con un perfil optimizado que atraiga clientes, reclutadores y oportunidades laborales."
+title: "Cómo optimizar tu perfil de LinkedIn y atraer oportunidades laborales"
+description: "Descubre cómo mejorar tu perfil de LinkedIn para captar la atención de reclutadores, clientes y colaboradores. Aplica estrategias efectivas de visibilidad y marca personal."
 pubDate: 2025-03-19
 author: "Emiliano Salgado Martínez"
 tags:
