@@ -1,11 +1,10 @@
 function setupNavbar(): void {
-  const menuButton = document.getElementById("menu-button") as HTMLButtonElement | null;
+  const menuButton = document.getElementById(
+    "menu-button"
+  ) as HTMLButtonElement | null;
   const menu = document.getElementById("menu") as HTMLElement | null;
-  const openButton = document.getElementById("comunity-button") as HTMLButtonElement | null;
-  const modal = document.querySelector('[aria-labelledby="modal-title"]') as HTMLElement | null;
-  const closeButton = modal?.querySelector(".close-modal") as HTMLButtonElement | null;
 
-  if (!menuButton || !menu || !openButton || !modal) return;
+  if (!menuButton || !menu) return;
 
   // Manejo de Menú Móvil
   const toggleMenu = (): void => {
@@ -16,16 +15,6 @@ function setupNavbar(): void {
 
   menuButton.addEventListener("click", toggleMenu);
   if (localStorage.getItem("menuOpen") === "true") toggleMenu();
-
-  // Modal
-  const showModal = (): void => { modal.classList.replace("hidden", "flex"); };
-  const hideModal = (): void => { modal.classList.replace("flex", "hidden"); };
-
-  openButton.addEventListener("click", showModal);
-  closeButton?.addEventListener("click", hideModal);
-  modal.addEventListener("click", (e: MouseEvent) => {
-    if (e.target === modal) hideModal();
-  });
 }
 
 // Ejecutar al cargar la página

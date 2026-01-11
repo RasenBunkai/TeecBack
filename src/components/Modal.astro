@@ -88,11 +88,11 @@ import Info from "./icons/Info.astro";
     if (!modal || !closeModalButton || !openModalButton) return;
 
     const showModal = () => {
-      modal.classList.remove("hidden");
+      modal.classList.replace("hidden", "flex");
     };
 
     const hideModal = () => {
-      modal.classList.add("hidden");
+      modal.classList.replace("flex", "hidden");
     };
 
     // Abrir modal al hacer clic en el botón
@@ -100,6 +100,11 @@ import Info from "./icons/Info.astro";
 
     // Cerrar modal al hacer clic en el botón de cierre
     closeModalButton.addEventListener("click", hideModal);
+
+    // Cerrar modal al hacer clic en el overlay
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) hideModal();
+    });
 
     // Cerrar modal al presionar la tecla Escape
     document.addEventListener("keydown", (event) => {
