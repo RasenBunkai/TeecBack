@@ -9,24 +9,40 @@ const CvForm = () => {
     address: "",
   });
   const [education, setEducation] = useState([
-    {institution: "", degree: "", dates: ""},
+    {id: crypto.randomUUID(), institution: "", degree: "", dates: ""},
   ]);
   const [experience, setExperience] = useState([
-    {position: "", company: "", dates: "", description: ""},
+    {
+      id: crypto.randomUUID(),
+      position: "",
+      company: "",
+      dates: "",
+      description: "",
+    },
   ]);
+
   const [skills, setSkills] = useState([""]);
   const [publications, setPublications] = useState("");
   const [awards, setAwards] = useState("");
 
   // Agregar campos dinámicos
   const addEducationField = () => {
-    setEducation([...education, {institution: "", degree: "", dates: ""}]);
+    setEducation([
+      ...education,
+      {id: crypto.randomUUID(), institution: "", degree: "", dates: ""},
+    ]);
   };
 
   const addExperienceField = () => {
     setExperience([
       ...experience,
-      {position: "", company: "", dates: "", description: ""},
+      {
+        id: crypto.randomUUID(),
+        position: "",
+        company: "",
+        dates: "",
+        description: "",
+      },
     ]);
   };
 
@@ -52,11 +68,14 @@ const CvForm = () => {
     newSkills[index] = value;
     setSkills(newSkills);
   };
-
   // Función para generar el CV en PDF
   const generateHarvardCV = () => {
     const doc = new jsPDF();
     let yPos = 20;
+      if (!personal.name.trim()) {
+    alert("Por favor, ingresa tu nombre para generar el CV.");
+    return;
+  }
 
     // Header
     doc.setFont("helvetica");
@@ -161,7 +180,7 @@ const CvForm = () => {
       yPos += 5;
     }
 
-    doc.save("Harvard_CV.pdf");
+    doc.save("Harvard_cv.pdf");
   };
 
   return (
@@ -171,18 +190,21 @@ const CvForm = () => {
       </h4>
       <form className="space-y-6">
         {/* Información Personal */}
+        {/* Información Personal */}
         <div>
           <h5 className="text-slate-950 text-xl font-semibold mb-4 tracking-tighter text-pretty pointer-events-none">
             Información Personal
           </h5>
-          <div className="grid grid-cols-2 gap-4">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label
                 className="block text-sm font-medium text-gray-700"
-                For="Name">
+                htmlFor="cv-name">
                 Nombre completo
               </label>
               <input
+                id="cv-name"
                 type="text"
                 value={personal.name}
                 onChange={(e) =>
@@ -190,54 +212,61 @@ const CvForm = () => {
                 }
                 className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
                 required
+                autoComplete="name"
               />
             </div>
+
             <div>
               <label
                 className="block text-sm font-medium text-gray-700"
-                For="email">
+                htmlFor="cv-email">
                 Correo electrónico
               </label>
               <input
+                id="cv-email"
                 type="email"
                 value={personal.email}
                 onChange={(e) =>
                   setPersonal({...personal, email: e.target.value})
                 }
                 className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
-                required
+                autoComplete="email"
               />
             </div>
+
             <div>
               <label
                 className="block text-sm font-medium text-gray-700"
-                For="phoneNumber">
+                htmlFor="cv-phone">
                 Teléfono
               </label>
               <input
+                id="cv-phone"
                 type="tel"
                 value={personal.phone}
                 onChange={(e) =>
                   setPersonal({...personal, phone: e.target.value})
                 }
                 className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
-                required
+                autoComplete="tel"
               />
             </div>
+
             <div>
               <label
                 className="block text-sm font-medium text-gray-700"
-                For="Direction">
+                htmlFor="cv-address">
                 Dirección
               </label>
               <input
+                id="cv-address"
                 type="text"
                 value={personal.address}
                 onChange={(e) =>
                   setPersonal({...personal, address: e.target.value})
                 }
                 className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
-                required
+                autoComplete="street-address"
               />
             </div>
           </div>
@@ -250,7 +279,7 @@ const CvForm = () => {
           </h5>
           <div id="educationEntries" className="space-y-4">
             {education.map((edu, index) => (
-              <div key={index} className="education-entry">
+              <div key={edu.id} className="education-entry">
                 <input
                   type="text"
                   placeholder="Institución"
@@ -299,7 +328,7 @@ const CvForm = () => {
           </h5>
           <div id="experienceEntries" className="space-y-4">
             {experience.map((exp, index) => (
-              <div key={index} className="experience-entry">
+              <div key={exp.id} className="experience-entry">
                 <input
                   type="text"
                   placeholder="Posición"
@@ -405,5 +434,4 @@ const CvForm = () => {
     </div>
   );
 };
-
 export default CvForm;
