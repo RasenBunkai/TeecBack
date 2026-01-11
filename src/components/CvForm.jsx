@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {jsPDF} from "jspdf";
+import {generateHarvardCV} from "../lib/cv/generateHarvardCV";
 
 const CvForm = () => {
   const [personal, setPersonal] = useState({
@@ -69,119 +69,24 @@ const CvForm = () => {
     setSkills(newSkills);
   };
   // Función para generar el CV en PDF
-  const generateHarvardCV = () => {
-    const doc = new jsPDF();
-    let yPos = 20;
-      if (!personal.name.trim()) {
+const handleGeneratePDF = () => {
+  if (!personal.name.trim()) {
     alert("Por favor, ingresa tu nombre para generar el CV.");
     return;
   }
 
-    // Header
-    doc.setFont("helvetica");
-    doc.setFontSize(16);
-    doc.setTextColor(0, 86, 145); // Azul Harvard
-    doc.text(personal.name, 15, yPos);
-    yPos += 10;
-
-    // Información de contacto
-    doc.setFontSize(10);
-    doc.setTextColor(0);
-    const contactInfo = [personal.email, personal.phone, personal.address]
-      .filter(Boolean)
-      .join(" | ");
-    doc.text(contactInfo, 15, yPos);
-    yPos += 15;
-
-    // Educación
-    doc.setFontSize(12);
-    doc.setTextColor(0, 86, 145);
-    doc.text("EDUCACIÓN", 15, yPos);
-    yPos += 7;
-    doc.setDrawColor(0, 86, 145);
-    doc.line(15, yPos, 60, yPos);
-    yPos += 10;
-    education.forEach((edu) => {
-      doc.setFontSize(10);
-      doc.setFont("helvetica", "bold");
-      doc.text(edu.institution, 15, yPos);
-      doc.setFont("helvetica", "normal");
-      doc.text(edu.degree, 15, yPos + 5);
-      doc.text(edu.dates, 150, yPos, {align: "right"});
-      yPos += 15;
-    });
-
-    // Experiencia Profesional
-    yPos += 5;
-    doc.setFontSize(12);
-    doc.setTextColor(0, 86, 145);
-    doc.text("EXPERIENCIA PROFESIONAL", 15, yPos);
-    yPos += 7;
-    doc.line(15, yPos, 60, yPos);
-    yPos += 10;
-    experience.forEach((exp) => {
-      doc.setFont("helvetica", "bold");
-      doc.text(exp.position, 15, yPos);
-      doc.setFont("helvetica", "normal");
-      doc.text(exp.company, 15, yPos + 5);
-      doc.text(exp.dates, 150, yPos, {align: "right"});
-      yPos += 10;
-      const splitDesc = doc.splitTextToSize(exp.description, 170);
-      splitDesc.forEach((line) => {
-        doc.text("• " + line, 20, yPos);
-        yPos += 7;
-      });
-      yPos += 5;
-    });
-
-    // Habilidades
-    doc.setFontSize(12);
-    doc.setTextColor(0, 86, 145);
-    doc.text("HABILIDADES TÉCNICAS", 15, yPos);
-    yPos += 7;
-    doc.line(15, yPos, 60, yPos);
-    yPos += 10;
-    doc.setFontSize(10);
-    const skillsText = skills.filter(Boolean).join(", ");
-    doc.text(skillsText, 15, yPos, {maxWidth: 180});
-    yPos += 15;
-
-    // Publicaciones
-    if (publications) {
-      doc.setFontSize(12);
-      doc.setTextColor(0, 86, 145);
-      doc.text("PUBLICACIONES", 15, yPos);
-      yPos += 7;
-      doc.line(15, yPos, 60, yPos);
-      yPos += 10;
-      doc.setFontSize(10);
-      const splitPub = doc.splitTextToSize(publications, 180);
-      splitPub.forEach((line) => {
-        doc.text(line, 15, yPos);
-        yPos += 7;
-      });
-      yPos += 5;
-    }
-
-    // Premios y Reconocimientos
-    if (awards) {
-      doc.setFontSize(12);
-      doc.setTextColor(0, 86, 145);
-      doc.text("PREMIOS Y RECONOCIMIENTOS", 15, yPos);
-      yPos += 7;
-      doc.line(15, yPos, 60, yPos);
-      yPos += 10;
-      doc.setFontSize(10);
-      const splitAwards = doc.splitTextToSize(awards, 180);
-      splitAwards.forEach((line) => {
-        doc.text(line, 15, yPos);
-        yPos += 7;
-      });
-      yPos += 5;
-    }
-
-    doc.save("Harvard_cv.pdf");
-  };
+  generateHarvardCV(
+    {
+      personal,
+      education: education.map(({id, ...rest}) => rest),
+      experience: experience.map(({id, ...rest}) => rest),
+      skills,
+      publications,
+      awards,
+    },
+    {filename: "Harvard_CV.pdf"}
+  );
+};
 
   return (
     <div className="max-w-4xl mx-auto p-6">
@@ -426,7 +331,7 @@ const CvForm = () => {
 
         <button
           type="button"
-          onClick={generateHarvardCV}
+          onClick={handleGeneratePDF}
           className="w-full text-lg mt-6 bg-indigo-900 text-white font-semibold py-2 px-4 rounded hover:bg-indigo-950 transition-colors cursor-pointer my-4">
           Generar CV en formato Harvard
         </button>
