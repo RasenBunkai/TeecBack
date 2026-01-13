@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://teecback.vercel.app/sitemap-index.xml

@@ -21,12 +21,10 @@ import {ClientRouter} from "astro:transitions";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-
     <title>TeecBack | {title}</title>
     <meta name="description" content={description} />
-
+    <link rel="canonical" href={Astro.url.href} />
     <link rel="icon" type="image/png" href="/Tucan.png" />
-
     <!-- Open Graph -->
     <meta property="og:site_name" content="TeecBack" />
     <meta property="og:title" content={`TeecBack | ${title}`} />
