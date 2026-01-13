@@ -1,8 +1,18 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../../layouts/Layout.astro";
 import NavBar from "@components/NavBar.astro";
 
-const allPosts = import.meta.glob("../pages/posts/*.md");
+const allPosts = import.meta.glob("../../posts/*.md");
+
+const slugify = (s: string) =>
+  s
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
 
 const resolvedPosts = await Promise.all(
   Object.entries(allPosts).map(async ([key, post]) => {
@@ -18,8 +28,7 @@ const resolvedPosts = await Promise.all(
           : null;
 
     return {
-      key,
-      slug: key.replace("../pages", "").replace(".md", ""), // /posts/xxx
+      slug: key.replace("../../", "/"), // /posts/xxx.md  ->  /posts/xxx.md (luego lo ajustamos abajo)
       title: fm?.title ?? "Sin título",
       description: fm?.description ?? "",
       pubDate: pubDateISO ?? "Fecha desconocida",
@@ -29,40 +38,67 @@ const resolvedPosts = await Promise.all(
   })
 );
 
-// Orden por fecha (desc)
-resolvedPosts.sort((a, b) => b.pubDateSortable - a.pubDateSortable);
+// Normaliza slug a ruta sin .md
+const posts = resolvedPosts
+  .map((p) => ({...p, slug: p.slug.replace(".md", "")}))
+  .sort((a, b) => b.pubDateSortable - a.pubDateSortable);
 
-// Tags únicos
-const allTags = Array.from(new Set(resolvedPosts.flatMap((p) => p.tags))).sort(
-  (a, b) => a.localeCompare(b)
-);
+// Construye mapas y lista de tags estáticos
+const tagPairs: Array<{tag: string; slug: string}> = [];
+const slugToTag = new Map<string, string>();
 
-// Filtro por query param ?tag=
-const selectedTag = Astro.url.searchParams.get("tag") ?? "";
-const visiblePosts = selectedTag
-  ? resolvedPosts.filter((p) => p.tags.includes(selectedTag))
-  : resolvedPosts;
-const slugify = (s) =>
-  s
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9\s-]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-");
+for (const p of posts) {
+  for (const raw of p.tags) {
+    const tag = String(raw);
+    const s = slugify(tag);
 
-const tagToSlug = new Map();
-for (const p of resolvedPosts) {
-  for (const t of p.tags) {
-    if (!tagToSlug.has(t)) tagToSlug.set(t, slugify(String(t)));
+    // evita duplicados
+    if (!slugToTag.has(s)) {
+      slugToTag.set(s, tag);
+      tagPairs.push({tag, slug: s});
+    }
   }
 }
+
+export async function getStaticPaths() {
+  const allPosts = import.meta.glob("../../posts/*.md");
+
+  const slugify = (s: string) =>
+    s
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-");
+
+  const resolved = await Promise.all(
+    Object.values(allPosts).map(async (post) => {
+      const mod = await (post as any)();
+      const fm = (mod as any).frontmatter;
+      return Array.isArray(fm?.tags) ? fm.tags.map(String) : [];
+    })
+  );
+
+  const tagSlugs = Array.from(new Set(resolved.flat().map((t) => slugify(t))));
+
+  return tagSlugs.map((tag) => ({params: {tag}}));
+}
+
+const tagSlug = Astro.params.tag;
+const selectedTag = slugToTag.get(tagSlug) ?? "";
+
+const visiblePosts = selectedTag
+  ? posts.filter((p) => p.tags.includes(selectedTag))
+  : [];
+
+const toTagHref = (tag: string) => `/blog/tag/${slugify(tag)}`;
 ---
 
 <Layout
-  title="Blog"
-  description="Artículos y guías para egresados: entrevistas, CV, LinkedIn, empleos remotos y recursos para desarrollo profesional.">
+  title={`Blog: ${selectedTag || "Tag"}`}
+  description={`Artículos etiquetados con: ${selectedTag || "tag"}.`}>
   <NavBar />
 
   <div class="min-h-screen p-6">
@@ -74,48 +110,22 @@ for (const p of resolvedPosts) {
 
       <p
         class="text-gray-600 text-center mb-6 text-lg leading-tight tracking-tighter text-pretty pointer-events-none">
-        Descubre artículos útiles en nuestro blog.
+        Filtrando por tag:
+        <span class="font-semibold text-indigo-950"> {selectedTag}</span>
       </p>
 
-      <!-- Filtro de tags -->
-      <div class="flex flex-wrap gap-2 justify-center mb-8">
+      <div class="flex justify-center mb-8">
         <a
           href="/blog"
-          data-astro-reload
-          data-astro-prefetch="false"
-          class:list={[
-            "px-3 py-1 rounded-full text-sm font-semibold border transition",
-            selectedTag
-              ? "bg-white text-indigo-900 border-indigo-200 hover:bg-indigo-50"
-              : "bg-indigo-900 text-white border-indigo-900",
-          ]}>
-          Todos
+          class="px-3 py-1 rounded-full text-sm font-semibold border transition bg-indigo-900 text-white border-indigo-900">
+          Ver todos
         </a>
-
-        {
-          allTags.map((tag) => (
-            <a
-              href={`/blog/tag/${tagToSlug.get(tag)}`}
-              data-astro-reload
-              data-astro-prefetch="false"
-              class:list={[
-                "px-3 py-1 rounded-full text-sm font-semibold border transition",
-                selectedTag === tag
-                  ? "bg-indigo-900 text-white border-indigo-900"
-                  : "bg-white text-indigo-900 border-indigo-200 hover:bg-indigo-50",
-              ]}
-              aria-label={`Filtrar por tag: ${tag}`}>
-              {tag}
-            </a>
-          ))
-        }
       </div>
 
-      <!-- Estado cuando no hay posts -->
       {
         visiblePosts.length === 0 && (
           <p class="text-center text-gray-600">
-            No hay artículos para el tag seleccionado.
+            No hay artículos para este tag.
           </p>
         )
       }
@@ -136,14 +146,12 @@ for (const p of resolvedPosts) {
 
                 {tags?.length > 0 && (
                   <ul class="flex flex-wrap gap-2 mt-2">
-                    {tags.map((tag) => (
+                    {tags.map((t) => (
                       <li>
                         <a
-                          href={`/blog/tag/${tagToSlug.get(tag)}`}
-                          data-astro-reload
-                          data-astro-prefetch="false"
+                          href={toTagHref(String(t))}
                           class="inline-block bg-indigo-100 text-indigo-800 text-xs font-semibold px-2 py-1 rounded tracking-tighter text-pretty hover:bg-indigo-200 transition">
-                          {tag}
+                          {t}
                         </a>
                       </li>
                     ))}
@@ -154,8 +162,6 @@ for (const p of resolvedPosts) {
               <div class="mt-6 flex flex-col gap-2">
                 <a
                   href={slug}
-                  data-astro-reload
-                  data-astro-prefetch="false"
                   class="inline-flex items-center justify-center gap-2 bg-indigo-900 text-white px-4 py-2 rounded-md font-medium text-sm hover:bg-indigo-950 transition-colors duration-300">
                   Leer artículo
                 </a>
