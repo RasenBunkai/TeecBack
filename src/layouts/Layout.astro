@@ -1,8 +1,16 @@
 ---
 interface Props {
   title: string;
+  description?: string;
+  ogImage?: string;
 }
-const {title} = Astro.props;
+
+const {
+  title,
+  description = "TeecBack: plataforma para recopilar retroalimentación de egresados y ofrecer recursos de empleabilidad.",
+  ogImage = "/Tucan.png",
+} = Astro.props;
+
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import {ClientRouter} from "astro:transitions";
@@ -12,10 +20,26 @@ import {ClientRouter} from "astro:transitions";
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/Tucan.png" />
-    <title>teecBack | {title}</title>
+
+    <title>TeecBack | {title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="icon" type="image/png" href="/Tucan.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="TeecBack" />
+    <meta property="og:title" content={`TeecBack | ${title}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`TeecBack | ${title}`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <ClientRouter />
   </head>
   <body>
@@ -23,6 +47,7 @@ import {ClientRouter} from "astro:transitions";
     <Footer />
   </body>
 </html>
+
 <style is:global>
   body {
     background: #e8edf3;
